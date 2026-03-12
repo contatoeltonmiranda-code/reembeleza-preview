@@ -1,2297 +1,2647 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reembeleza Kosmetikstudio | Koblenz</title>
-  <meta name="description" content="Brasilianische Schönheitspflege mit deutscher Präzision. Brazilian Waxing, Sugaring, Lymphdrainage, Massagen und mehr in Koblenz.">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-  <style>
-    /* ============================================
-       RESET & BASE
-    ============================================ */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --white: #ffffff;
-      --off-white: #faf8f6;
-      --cream: #f5f0ec;
-      --pink-light: #f2dede;
-      --pink: #d4a0a0;
-      --pink-dark: #c08080;
-      --rose: #b87474;
-      --black: #1a1a1a;
-      --grey-dark: #333333;
-      --grey: #666666;
-      --grey-light: #999999;
-      --grey-lighter: #e0ddd9;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Montserrat', 'Helvetica Neue', sans-serif;
-      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.06);
-      --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.1);
-      --max-width: 1200px;
-      --section-padding: 60px 0;
-    }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-
-    body {
-      font-family: var(--font-sans);
-      color: var(--grey-dark);
-      background: var(--white);
-      line-height: 1.7;
-      font-weight: 300;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ============================================
-       TYPOGRAPHY
-    ============================================ */
-    .section-label {
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 400;
-      color: var(--black);
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--grey);
-      max-width: 650px;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 70px;
-    }
-
-    .section-header .section-subtitle {
-      margin: 0 auto;
-    }
-
-    /* ============================================
-       BUTTONS
-    ============================================ */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-sans);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 18px 40px;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .btn-primary {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--pink-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-medium);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--black);
-      border: 1.5px solid var(--black);
-    }
-
-    .btn-outline:hover {
-      background: var(--black);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    .btn-pink {
-      background: var(--pink);
-      color: var(--white);
-    }
-
-    .btn-pink:hover {
-      background: var(--rose);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-medium);
-    }
-
-    .btn-white {
-      background: var(--white);
-      color: var(--black);
-    }
-
-    .btn-white:hover {
-      background: var(--off-white);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-medium);
-    }
-
-    /* ============================================
-       NAVBAR
-    ============================================ */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 24px 0;
-      transition: var(--transition);
-    }
-
-    .navbar.scrolled {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      padding: 16px 0;
-      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
-    }
-
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .navbar-brand img {
-      height: 40px;
-      width: auto;
-      filter: brightness(0) invert(1);
-      transition: var(--transition);
-    }
-
-    .navbar.scrolled .navbar-brand img {
-      filter: brightness(0);
-    }
-
-    .navbar-cta {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white);
-      padding: 12px 28px;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 12px;
-      transition: var(--transition);
-    }
-
-    .navbar.scrolled .navbar-cta {
-      color: var(--black);
-      border-color: var(--black);
-    }
-
-    .navbar-cta:hover {
-      background: var(--white);
-      color: var(--black);
-      border-color: var(--white);
-    }
-
-    .navbar.scrolled .navbar-cta:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    /* ============================================
-       HERO
-    ============================================ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: url('imagens/background.png') center center / cover no-repeat;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(212, 160, 160, 0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 80%, rgba(212, 160, 160, 0.1) 0%, transparent 50%);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 24px;
-    }
-
-    .hero-label {
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeUp 1s 0.3s forwards;
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeUp 1s 0.5s forwards;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--pink);
-    }
-
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, 0.65);
-      line-height: 1.9;
-      max-width: 600px;
-      margin: 0 auto 50px;
-      font-weight: 300;
-      opacity: 0;
-      animation: fadeUp 1s 0.7s forwards;
-    }
-
-    .hero-cta {
-      opacity: 0;
-      animation: fadeUp 1s 0.9s forwards;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: fit-content;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeUp 1s 1.2s forwards;
-    }
-
-    .hero-scroll span {
-      font-size: 0.65rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 50px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(1); }
-      50% { opacity: 1; transform: scaleY(1.2); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ============================================
-       SECTION: DOR / IDENTIFICACAO
-    ============================================ */
-    .pain-section {
-      padding: var(--section-padding);
-      background: var(--white);
-    }
-
-    .pain-content {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .pain-content p {
-      font-size: 1.1rem;
-      line-height: 2;
-      color: var(--grey);
-      margin-bottom: 28px;
-      font-weight: 300;
-    }
-
-    .pain-content p:last-of-type {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      color: var(--black);
-      font-weight: 500;
-      font-style: italic;
-      margin-top: 40px;
-    }
-
-    .pain-highlight {
-      color: var(--pink-dark) !important;
-      font-weight: 400 !important;
-    }
-
-    /* ============================================
-       SECTION: HISTORIA / ORIGEM
-    ============================================ */
-    .story-section {
-      padding: var(--section-padding);
-      background: var(--off-white);
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .story-image {
-      position: relative;
-      aspect-ratio: 3/4;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .story-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-image img,
-    .service-detail-image img,
-    .for-you-image img,
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-image::after {
-      content: '';
-      position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 100%;
-      height: 100%;
-      border: 1px solid var(--pink);
-      z-index: -1;
-    }
-
-    .story-text p {
-      font-size: 1.05rem;
-      line-height: 1.9;
-      color: var(--grey);
-      margin-bottom: 24px;
-    }
-
-    .story-stats {
-      display: flex;
-      gap: 50px;
-      margin-top: 50px;
-      padding-top: 40px;
-      border-top: 1px solid var(--grey-lighter);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      font-family: var(--font-serif);
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--pink-dark);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey-light);
-      font-weight: 500;
-    }
-
-    /* ============================================
-       SECTION: SERVICOS
-    ============================================ */
-    .services-section {
-      padding: var(--section-padding);
-      background: var(--white);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 60px;
-    }
-
-    .service-card {
-      padding: 50px 36px;
-      background: var(--white);
-      border: 1px solid var(--grey-lighter);
-      border-radius: 12px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--pink);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s ease;
-    }
-
-    .service-card:hover::before { transform: scaleX(1); }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-medium);
-      border-color: transparent;
-    }
-
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--cream);
-      margin-bottom: 28px;
-      transition: var(--transition);
-    }
-
-    .service-icon i { color: var(--pink-dark); }
-
-    .service-card:hover .service-icon {
-      background: var(--pink);
-    }
-
-    .service-card:hover .service-icon i { color: var(--white); }
-
-    .service-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--black);
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-      color: var(--grey);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .service-features {
-      margin-bottom: 28px;
-    }
-
-    .service-features li {
-      font-size: 0.88rem;
-      color: var(--grey);
-      padding: 6px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .service-features li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 14px;
-      width: 8px;
-      height: 1px;
-      background: var(--pink);
-    }
-
-    .service-card .btn {
-      padding: 14px 28px;
-      font-size: 0.7rem;
-      width: 100%;
-      justify-content: center;
-    }
-
-    /* Service detail (expanded view) */
-    .service-detail {
-      padding: 40px 0;
-      border-bottom: 1px solid var(--grey-lighter);
-    }
-
-    .service-detail:last-child { border-bottom: none; }
-
-    .service-detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: stretch;
-    }
-
-    .service-detail:nth-child(even) .service-detail-grid {
-      direction: rtl;
-    }
-
-    .service-detail:nth-child(even) .service-detail-grid > * {
-      direction: ltr;
-    }
-
-    .service-detail-image {
-      min-height: 400px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--cream), var(--pink-light));
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-detail-image img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .service-detail-text h3 {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--black);
-      margin-bottom: 20px;
-    }
-
-    .service-detail-text > p {
-      font-size: 1.05rem;
-      color: var(--grey);
-      line-height: 1.9;
-      margin-bottom: 28px;
-    }
-
-    .service-detail-text h4 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--pink-dark);
-      margin-bottom: 18px;
-    }
-
-    .service-detail-features li {
-      font-size: 0.95rem;
-      color: var(--grey);
-      padding: 8px 0;
-      padding-left: 24px;
-      position: relative;
-      line-height: 1.6;
-    }
-
-    .service-detail-features li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 16px;
-      width: 10px;
-      height: 1px;
-      background: var(--pink);
-    }
-
-    .service-detail-result {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--black);
-      margin-top: 28px;
-      padding-top: 28px;
-      border-top: 1px solid var(--grey-lighter);
-      line-height: 1.7;
-    }
-
-    .service-detail-cta {
-      margin-top: 32px;
-    }
-
-    /* CTA Intermediario */
-    .services-cta-bar {
-      background: var(--off-white);
-      padding: 60px;
-      text-align: center;
-      margin-top: 20px;
-      border-radius: 12px;
-    }
-
-    .services-cta-bar p {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      color: var(--black);
-      margin-bottom: 8px;
-    }
-
-    .services-cta-bar .sub {
-      font-family: var(--font-sans) !important;
-      font-size: 0.95rem !important;
-      color: var(--grey) !important;
-      margin-bottom: 30px;
-    }
-
-    .services-cta-bar .phone {
-      display: block;
-      margin-top: 16px;
-      font-size: 0.85rem;
-      color: var(--grey-light);
-    }
-
-    .services-cta-bar .phone a {
-      color: var(--pink-dark);
-      font-weight: 500;
-    }
-
-    /* ============================================
-       SECTION: DIFERENCIAIS (3 PILARES)
-    ============================================ */
-    .pillars-section {
-      padding: var(--section-padding);
-      background: var(--black);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pillars-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(212, 160, 160, 0.08), transparent 70%);
-    }
-
-    .pillars-section .section-label { color: var(--pink); }
-    .pillars-section .section-title { color: var(--white); }
-    .pillars-section .section-subtitle { color: rgba(255,255,255,0.5); }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .pillar-card {
-      padding: 50px 36px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .pillar-card:hover {
-      border-color: var(--pink);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .pillar-number {
-      font-family: var(--font-serif);
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--pink);
-      opacity: 0.4;
-      line-height: 1;
-      margin-bottom: 24px;
-    }
-
-    .pillar-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 18px;
-      line-height: 1.3;
-    }
-
-    .pillar-card p {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.8;
-    }
-
-    .pillars-bottom {
-      text-align: center;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .pillars-bottom p {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.45);
-      margin-bottom: 12px;
-      line-height: 1.8;
-    }
-
-    .pillars-bottom .highlight {
-      color: var(--pink);
-      font-weight: 500;
-    }
-
-    /* ============================================
-       SECTION: EXPERIENCIA (PASSO A PASSO)
-    ============================================ */
-    .steps-section {
-      padding: var(--section-padding);
-      background: var(--off-white);
-    }
-
-    .steps-timeline {
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .steps-timeline::before {
-      content: '';
-      position: absolute;
-      left: 32px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--grey-lighter);
-    }
-
-    .step-item {
-      display: flex;
-      gap: 36px;
-      margin-bottom: 50px;
-      position: relative;
-    }
-
-    .step-item:last-child { margin-bottom: 0; }
-
-    .step-number {
-      flex-shrink: 0;
-      width: 64px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--white);
-      border: 1px solid var(--grey-lighter);
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      color: var(--pink-dark);
-      position: relative;
-      z-index: 1;
-      border-radius: 12px;
-      transition: var(--transition);
-    }
-
-    .step-item:hover .step-number {
-      background: var(--pink);
-      color: var(--white);
-      border-color: var(--pink);
-    }
-
-    .step-content h3 {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--black);
-      margin-bottom: 10px;
-    }
-
-    .step-content p {
-      font-size: 0.95rem;
-      color: var(--grey);
-      line-height: 1.8;
-    }
-
-    .steps-cta {
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    /* ============================================
-       SECTION: PARA QUEM
-    ============================================ */
-    .for-you-section {
-      padding: var(--section-padding);
-      background: var(--white);
-    }
-
-    .for-you-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .for-you-list li {
-      font-size: 1.05rem;
-      color: var(--grey-dark);
-      padding: 18px 0;
-      padding-left: 36px;
-      position: relative;
-      border-bottom: 1px solid var(--cream);
-      line-height: 1.7;
-    }
-
-    .for-you-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 28px;
-      width: 16px;
-      height: 1px;
-      background: var(--pink);
-    }
-
-    .for-you-image {
-      aspect-ratio: 3/4;
-      border-radius: 12px;
-      background: linear-gradient(145deg, var(--cream), var(--pink-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .for-you-image::before {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: -20px;
-      width: 100%;
-      height: 100%;
-      border: 1px solid var(--pink);
-      z-index: -1;
-    }
-
-    .for-you-closing {
-      text-align: center;
-      margin-top: 60px;
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--grey);
-    }
-
-    /* ============================================
-       SECTION: DEPOIMENTOS
-    ============================================ */
-    .testimonials-section {
-      padding: var(--section-padding);
-      background: var(--off-white);
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      padding: 44px 36px;
-      border-radius: 12px;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .testimonial-quote {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      color: var(--pink);
-      line-height: 1;
-      margin-bottom: 16px;
-      opacity: 0.5;
-    }
-
-    .testimonial-card p {
-      font-size: 0.95rem;
-      color: var(--grey);
-      line-height: 1.9;
-      font-style: italic;
-      margin-bottom: 28px;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .testimonial-avatar {
-      width: 44px;
-      height: 44px;
-      background: var(--cream);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--pink-dark);
-      font-weight: 500;
-    }
-
-    .testimonial-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--black);
-    }
-
-    .testimonial-role {
-      font-size: 0.78rem;
-      color: var(--grey-light);
-      margin-top: 2px;
-    }
-
-    .testimonials-disclaimer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.78rem;
-      color: var(--grey-light);
-      font-style: italic;
-    }
-
-    /* ============================================
-       SECTION: SOBRE / EXPERT
-    ============================================ */
-    .about-section {
-      padding: var(--section-padding);
-      background: var(--white);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .about-image {
-      position: relative;
-      aspect-ratio: 3/4;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .about-image::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40%;
-      background: linear-gradient(to top, rgba(26,26,26,0.3), transparent);
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      color: var(--grey);
-      line-height: 1.9;
-      margin-bottom: 24px;
-    }
-
-    .about-qualifications {
-      margin: 32px 0;
-    }
-
-    .about-qualifications h4 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--pink-dark);
-      margin-bottom: 18px;
-    }
-
-    .about-qualifications li {
-      font-size: 0.95rem;
-      color: var(--grey);
-      padding: 8px 0;
-      padding-left: 24px;
-      position: relative;
-      line-height: 1.6;
-    }
-
-    .about-qualifications li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 16px;
-      width: 10px;
-      height: 1px;
-      background: var(--pink);
-    }
-
-    .about-closing {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--black);
-      margin-top: 20px;
-    }
-
-    /* ============================================
-       SECTION: FAQ
-    ============================================ */
-    .faq-section {
-      padding: var(--section-padding);
-      background: var(--off-white);
-    }
-
-    .faq-list {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--grey-lighter);
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 0;
-      cursor: pointer;
-      transition: var(--transition);
-      user-select: none;
-    }
-
-    .faq-question:hover { color: var(--pink-dark); }
-
-    .faq-question h3 {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: inherit;
-      padding-right: 20px;
-    }
-
-    .faq-toggle {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .faq-toggle span {
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 1;
-    }
-
-    .faq-item.active .faq-toggle { transform: rotate(45deg); }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding-bottom: 28px;
-    }
-
-    .faq-answer p {
-      font-size: 0.95rem;
-      color: var(--grey);
-      line-height: 1.9;
-      padding-right: 52px;
-    }
-
-    /* ============================================
-       SECTION: ULTIMA CHAMADA
-    ============================================ */
-    .final-cta-section {
-      padding: 140px 0;
-      background: linear-gradient(165deg, #1a1a1a 0%, #2a2a2a 50%, #3a2a2a 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .final-cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(212, 160, 160, 0.1) 0%, transparent 60%);
-    }
-
-    .final-cta-content {
-      position: relative;
-      z-index: 2;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    .final-cta-content .section-title {
-      color: var(--white);
-      margin-bottom: 24px;
-    }
-
-    .final-cta-content p {
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.9;
-      margin-bottom: 16px;
-    }
-
-    .final-cta-content p.emphasis {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.7);
-      font-style: italic;
-      margin: 32px 0;
-    }
-
-    .final-cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .final-cta-contact {
-      margin-top: 40px;
-    }
-
-    .final-cta-contact p {
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.4);
-    }
-
-    .final-cta-contact a {
-      color: var(--pink);
-      font-weight: 500;
-      transition: var(--transition);
-    }
-
-    .final-cta-contact a:hover { color: var(--white); }
-
-    /* ============================================
-       FOOTER
-    ============================================ */
-    .footer {
-      background: #111;
-      padding: 80px 0 40px;
-      color: rgba(255, 255, 255, 0.4);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 60px;
-    }
-
-    .footer-brand {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-
-    .footer-desc {
-      font-size: 0.9rem;
-      line-height: 1.8;
-      max-width: 360px;
-    }
-
-    .footer h4 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--white);
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
-
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      font-size: 0.88rem;
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover { color: var(--pink); }
-
-    .footer-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      font-size: 0.88rem;
-    }
-
-    .footer-contact-item i { color: var(--pink); width: 16px; }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.78rem;
-    }
-
-    .footer-legal a {
-      margin-left: 24px;
-      transition: var(--transition);
-    }
-
-    .footer-legal a:hover { color: var(--pink); }
-
-    /* ============================================
-       SCROLL TO TOP
-    ============================================ */
-    .scroll-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 48px;
-      height: 48px;
-      background: var(--black);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      z-index: 999;
-    }
-
-    .scroll-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .scroll-top:hover {
-      background: var(--pink-dark);
-      transform: translateY(-3px);
-    }
-
-    /* ============================================
-       WHATSAPP FLOAT
-    ============================================ */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      width: 56px;
-      height: 56px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      transition: var(--transition);
-      z-index: 999;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
-    }
-
-    .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
-
-    /* ============================================
-       RESPONSIVE
-    ============================================ */
-    @media (max-width: 1024px) {
-      :root { --section-padding: 45px 0; }
-
-      .services-grid,
-      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .story-grid,
-      .service-detail-grid,
-      .about-grid,
-      .for-you-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .service-detail:nth-child(even) .service-detail-grid { direction: ltr; }
-
-      .service-detail-image {
-        aspect-ratio: 4/3;
-        min-height: unset;
-      }
-
-      .service-detail-image img {
-        position: absolute;
-        inset: 0;
-      }
-
-      .story-image { max-width: 500px; margin: 0 auto; }
-      .story-image::after { display: none; }
-
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      :root { --section-padding: 35px 0; }
-
-      .services-grid,
-      .testimonials-grid,
-      .pillars-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
-
-      .hero-subtitle { font-size: 0.95rem; }
-
-      .story-stats { gap: 30px; flex-wrap: wrap; }
-
-      .service-card { padding: 36px 28px; }
-
-      .pillar-card { padding: 36px 28px; }
-
-      .services-cta-bar { padding: 40px 24px; }
-
-      .for-you-image { max-width: 400px; margin: 0 auto; }
-      .for-you-image::before { display: none; }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
-      }
-
-      .final-cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .steps-timeline::before { left: 31px; }
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 0 16px; }
-      .btn { padding: 16px 32px; font-size: 0.72rem; }
-      .navbar-cta { display: none; }
-    }
-
-    /* ============================================
-       DIVIDER
-    ============================================ */
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: var(--pink);
-      margin: 0 auto 24px;
-    }
-
-    .section-header .divider {
-      margin-bottom: 24px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reembeleza Kosmetikstudio Koblenz — Brasilianische Schönheitspflege</title>
+    <meta name="description" content="Reembeleza Kosmetikstudio in Koblenz. Brazilian Waxing, Sugaring, Lymphdrainage, Wimperlifting, Massagen und Hautpflege. Brasilianische Technik, deutsche Qualität.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #faf8f6;
+            --cream: #f5f0ec;
+            --pink-light: #f2dede;
+            --pink: #d4a0a0;
+            --pink-dark: #c08080;
+            --rose: #b87474;
+            --black: #1a1a1a;
+            --grey-dark: #333;
+            --grey: #666;
+            --grey-light: #999;
+            --grey-lighter: #e0ddd9;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--grey-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ======================== BUTTONS ======================== */
+        .btn {
+            display: inline-block;
+            padding: 20px 48px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--grey-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-pink {
+            background: var(--pink-dark);
+            color: var(--white);
+        }
+
+        .btn-pink:hover {
+            background: var(--rose);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(192,128,128,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-sm {
+            padding: 14px 32px;
+            font-size: 0.78rem;
+        }
+
+        /* ======================== SECTION HEADERS ======================== */
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--pink-dark);
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-label::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--pink);
+            border-radius: 2px;
+        }
+
+        .section-label-center {
+            text-align: center;
+        }
+
+        .section-label-center .section-label::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--black);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--grey);
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        .section-subtitle-center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* ======================== NAVBAR ======================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+            padding: 10px 0;
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar-logo img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0);
+            transition: filter 0.4s ease;
+        }
+
+        .navbar.scrolled .navbar-logo img {
+            filter: brightness(0);
+        }
+
+        .navbar-cta .btn {
+            padding: 12px 28px;
+            font-size: 0.75rem;
+            background: var(--pink-dark);
+            color: var(--white);
+        }
+
+        .navbar-cta .btn:hover {
+            background: var(--rose);
+        }
+
+        .navbar-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .navbar-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-menu-toggle span {
+            background: var(--black);
+        }
+
+        /* ======================== HERO ======================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('imagens/background 01.png') center center / cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            display: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 24px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 28px;
+        }
+
+        .hero-title {
+            font-size: 2.9rem;
+            color: var(--black);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 28px;
+            max-width: 700px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--grey);
+            line-height: 1.8;
+            margin-bottom: 44px;
+            max-width: 620px;
+        }
+
+        /* ======================== MARQUEE RIBBONS ======================== */
+        .marquee-ribbons {
+            position: relative;
+            z-index: 3;
+            margin-top: -48px;
+            margin-bottom: -48px;
+            pointer-events: none;
+        }
+
+        .marquee-ribbon {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .marquee-ribbon-1 {
+            transform: rotate(-1.5deg) scale(1.02);
+            background: var(--black);
+        }
+
+        .marquee-ribbon-2 {
+            transform: rotate(1.5deg) scale(1.02);
+            background: var(--pink-dark);
+            margin-top: -4px;
+        }
+
+        .marquee-track {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .marquee-track span {
+            display: inline-block;
+            padding: 0 16px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .marquee-ribbon-1 .marquee-track span::after,
+        .marquee-ribbon-2 .marquee-track span::after {
+            content: '✦';
+            margin-left: 16px;
+            font-size: 0.6rem;
+            vertical-align: middle;
+            opacity: 0.5;
+        }
+
+        .marquee-left {
+            animation: marqueeLeft 25s linear infinite;
+        }
+
+        .marquee-right {
+            animation: marqueeRight 25s linear infinite;
+        }
+
+        @keyframes marqueeLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes marqueeRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* ======================== PAIN SECTION ======================== */
+        .pain-section {
+            padding: 80px 0 60px;
+            background: var(--off-white);
+        }
+
+        .pain-text {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            border-left: 4px solid var(--pink);
+            padding-left: 40px;
+        }
+
+        .pain-text::before {
+            content: '\201C';
+            position: absolute;
+            top: -16px;
+            left: -20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--pink);
+            opacity: 0.35;
+        }
+
+        .pain-text p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--grey);
+            margin-bottom: 20px;
+        }
+
+        .pain-text p:nth-child(4) {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .pain-text p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .pain-highlight {
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--pink-dark);
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 2px solid var(--pink-light);
+        }
+
+        /* ======================== STORY SECTION ======================== */
+        .story-section {
+            padding: 60px 0;
+            background: url('imagens/background 02.png') center center / cover no-repeat;
+            position: relative;
+            min-height: 90vh;
+        }
+
+        .story-grid {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .story-text {
+            max-width: 720px;
+            background: rgba(255,255,255,0.92);
+            border-radius: 12px;
+            padding: 44px 40px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .story-text p {
+            font-size: 1.05rem;
+            color: var(--grey-dark);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .story-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--grey-lighter);
+        }
+
+        .story-stat {
+            text-align: center;
+        }
+
+        .story-stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            display: block;
+        }
+
+        .story-stat-label {
+            font-size: 0.78rem;
+            color: var(--grey-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 4px;
+        }
+
+        /* ======================== SERVICES OVERVIEW ======================== */
+        .services-overview {
+            padding: 50px 0;
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 30px;
+        }
+
+        .services-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 28px;
+        }
+
+        .services-grid-4 .service-card:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--grey-lighter);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 8px 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .service-card-image {
+            display: none;
+        }
+
+        .service-card::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--pink), var(--pink-dark));
+        }
+
+        .service-card-content {
+            padding: 36px 32px;
+        }
+
+        .service-card-title {
+            font-size: 1.6rem;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .service-card-desc {
+            font-size: 0.95rem;
+            color: var(--grey);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-card-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .service-card-features li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.88rem;
+            color: var(--grey);
+            margin-bottom: 8px;
+        }
+
+        .service-card-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 2px;
+            background: var(--pink-dark);
+        }
+
+        /* ======================== SERVICE DETAIL SECTIONS ======================== */
+        #service-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .service-detail {
+            padding: 0;
+            background: var(--white);
+            border: 1px solid var(--grey-lighter);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 450px;
+        }
+
+        .service-detail:nth-child(even) .service-detail-grid {
+            direction: rtl;
+        }
+
+        .service-detail:nth-child(even) .service-detail-grid > * {
+            direction: ltr;
+        }
+
+        .service-detail-img-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            background: var(--off-white);
+        }
+
+        .service-detail-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border: 1px solid var(--pink-light);
+            border-radius: 16px;
+            pointer-events: none;
+        }
+
+        .service-detail-img-wrap::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 80px;
+            height: 80px;
+            border-top: 3px solid var(--pink);
+            border-left: 3px solid var(--pink);
+            border-radius: 12px 0 0 0;
+            pointer-events: none;
+        }
+
+        .service-detail-img-corner {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 80px;
+            height: 80px;
+            border-bottom: 3px solid var(--pink);
+            border-right: 3px solid var(--pink);
+            border-radius: 0 0 12px 0;
+            pointer-events: none;
+        }
+
+        .service-detail-img-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(212,160,160,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .service-detail-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 6px 8px 25px rgba(212,160,160,0.2);
+        }
+
+        .service-detail-content {
+            padding: 48px 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-detail-title {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .service-detail-subtitle {
+            font-size: 1.1rem;
+            color: var(--grey-light);
+            font-style: italic;
+            margin-bottom: 28px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .service-detail-content p {
+            font-size: 1rem;
+            color: var(--grey);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .service-detail-content h4 {
+            font-size: 1.2rem;
+            color: var(--black);
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .service-detail-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-detail-list li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--grey);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .service-detail-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 8px;
+            height: 2px;
+            background: var(--pink-dark);
+        }
+
+        .service-detail-result {
+            font-style: italic;
+            color: var(--grey-dark);
+            border-left: 3px solid var(--pink);
+            padding-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 28px;
+        }
+
+        /* ======================== CTA BAR ======================== */
+        .cta-bar {
+            padding: 40px 0;
+            background: var(--white);
+        }
+
+        .cta-bar-inner {
+            background: var(--off-white);
+            border: 1px solid var(--grey-lighter);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .cta-bar-inner h3 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .cta-bar-inner p {
+            font-size: 1rem;
+            color: var(--grey);
+            margin-bottom: 28px;
+        }
+
+        .cta-bar-phone {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--pink-dark);
+            font-weight: 600;
+        }
+
+        .cta-bar-phone:hover {
+            color: var(--rose);
+        }
+
+        /* ======================== PILLARS ======================== */
+        .pillars-section {
+            padding: 60px 0;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillars-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,160,160,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .pillars-section .section-label {
+            color: var(--pink);
+        }
+
+        .pillars-section .section-label::after {
+            background: var(--pink);
+        }
+
+        .pillars-section .section-title {
+            color: var(--white);
+        }
+
+        .pillars-section .section-subtitle {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            border-top: 4px solid var(--pink);
+            border-radius: 12px;
+            padding: 50px 36px;
+            transition: all 0.4s ease;
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .pillar-card:hover {
+            border-color: rgba(255,255,255,0.2);
+            border-top-color: var(--pink-dark);
+            transform: translateY(-4px);
+        }
+
+        .pillar-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--pink);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .pillar-title {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .pillar-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.8;
+        }
+
+        .pillars-bottom {
+            text-align: center;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillars-bottom p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .pillars-bottom .pink-highlight {
+            color: var(--pink);
+        }
+
+        /* ======================== STEPS ======================== */
+        .steps-section {
+            padding: 50px 0;
+            background: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .steps-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 59px,
+                    rgba(212,160,160,0.06) 59px,
+                    rgba(212,160,160,0.06) 60px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 59px,
+                    rgba(212,160,160,0.06) 59px,
+                    rgba(212,160,160,0.06) 60px
+                );
+            pointer-events: none;
+        }
+
+        .steps-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(212,160,160,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .steps-list {
+            max-width: 780px;
+            margin: 30px auto 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .steps-list::before {
+            display: none;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            background: var(--white);
+            border: 1px solid var(--grey-lighter);
+            border-radius: 12px;
+            padding: 36px 36px 36px 32px;
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid var(--grey-lighter);
+            background: var(--off-white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--pink-dark);
+        }
+
+        .step-content h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 0.98rem;
+            color: var(--grey);
+            line-height: 1.8;
+        }
+
+        .steps-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* ======================== FOR YOU SECTION ======================== */
+        .for-you-section {
+            padding: 50px 0;
+            background: var(--white);
+        }
+
+        .for-you-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .for-you-list {
+            list-style: none;
+        }
+
+        .for-you-list li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 1.02rem;
+            color: var(--grey-dark);
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .for-you-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 10px;
+            height: 2px;
+            background: var(--pink-dark);
+        }
+
+        .for-you-closing {
+            margin-top: 32px;
+            font-size: 1.05rem;
+            color: var(--grey);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .for-you-image {
+            position: relative;
+            padding: 24px;
+        }
+
+        .for-you-image::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 70px;
+            height: 70px;
+            border-top: 3px solid var(--pink);
+            border-right: 3px solid var(--pink);
+            border-radius: 0 12px 0 0;
+        }
+
+        .for-you-image::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            width: 70px;
+            height: 70px;
+            border-bottom: 3px solid var(--pink);
+            border-left: 3px solid var(--pink);
+            border-radius: 0 0 0 12px;
+        }
+
+        .for-you-image img {
+            width: 100%;
+            border-radius: 12px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+            box-shadow: 6px 8px 25px rgba(212,160,160,0.2);
+        }
+
+        /* ======================== TESTIMONIALS ======================== */
+        .testimonials-section {
+            padding: 50px 0;
+            background: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 30px;
+        }
+
+        .testimonials-row-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 28px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 44px 36px;
+            border-radius: 12px;
+            border-left: 4px solid var(--pink);
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-quote {
+            font-size: 2.4rem;
+            color: var(--pink);
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 0.98rem;
+            color: var(--grey);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--pink-dark);
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--grey-light);
+            font-weight: 400;
+        }
+
+        .testimonials-disclaimer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.82rem;
+            color: var(--grey-light);
+            font-style: italic;
+        }
+
+        /* ======================== ABOUT ======================== */
+        .about-section {
+            padding: 0;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .about-section > .container {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+
+        .about-image {
+            position: relative;
+            min-height: 600px;
+        }
+
+        .about-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        .about-text {
+            padding: 60px 80px 60px 50px;
+        }
+
+        .about-text p {
+            font-size: 1.02rem;
+            color: var(--grey);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-qualifications {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 28px 0;
+        }
+
+        .about-qualifications h4 {
+            font-size: 1.2rem;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .about-qualifications ul {
+            list-style: none;
+        }
+
+        .about-qualifications li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--grey);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .about-qualifications li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 8px;
+            height: 2px;
+            background: var(--pink-dark);
+        }
+
+        .about-closing {
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--black);
+        }
+
+        /* ======================== FAQ ======================== */
+        .faq-section {
+            padding: 50px 0;
+            background: var(--off-white);
+        }
+
+        .faq-list {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            border-bottom: 2px solid var(--grey-lighter);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 0;
+            cursor: pointer;
+            gap: 20px;
+        }
+
+        .faq-question h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--black);
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover h3 {
+            color: var(--pink-dark);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 28px;
+        }
+
+        .faq-answer p {
+            font-size: 1rem;
+            color: var(--grey);
+            line-height: 1.8;
+        }
+
+        /* ======================== FINAL CTA ======================== */
+        .final-cta {
+            padding: 70px 0;
+            background: linear-gradient(165deg, #1a1a1a 0%, #2a2a2a 50%, #3a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212,160,160,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .final-cta-content {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta .section-label {
+            color: var(--pink);
+        }
+
+        .final-cta .section-label::after {
+            background: var(--pink);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .final-cta .section-title {
+            color: var(--white);
+            margin-bottom: 28px;
+        }
+
+        .final-cta-text {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .final-cta-emphasis {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin: 32px 0;
+            font-style: italic;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+            margin-bottom: 18px;
+        }
+
+        .final-cta-contact {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .final-cta-contact a {
+            color: var(--pink);
+            font-weight: 600;
+        }
+
+        .final-cta-contact a:hover {
+            color: var(--pink-dark);
+        }
+
+        /* ======================== FOOTER ======================== */
+        .footer {
+            background: #111;
+            padding: 40px 0 20px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--pink);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact-item i {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            color: rgba(255,255,255,0.3);
+            margin-top: 2px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--pink);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 60px;
+            padding-top: 24px;
+            font-size: 0.82rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.4);
+            margin-left: 24px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--pink);
+        }
+
+        /* ======================== SCROLL TO TOP ======================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 998;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--grey-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ======================== WHATSAPP FLOAT ======================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--white);
+        }
+
+        /* ======================== RESPONSIVE ======================== */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .services-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .pillars-grid {
+                gap: 24px;
+            }
+
+            .pillar-card {
+                padding: 40px 28px;
+            }
+
+            .service-detail-content {
+                padding: 40px 32px;
+            }
+
+            .story-grid,
+            .about-grid,
+            .for-you-grid {
+                gap: 50px;
+            }
+
+            .footer-grid {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-cta {
+                display: none;
+            }
+
+            .navbar-menu-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2rem);
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 6vw, 2.6rem);
+            }
+
+            .services-grid,
+            .services-grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .service-detail:nth-child(even) .service-detail-grid {
+                direction: ltr;
+            }
+
+            .service-detail-image {
+                height: 300px;
+            }
+
+            .service-detail-content {
+                padding: 36px 24px;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-grid,
+            .for-you-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .for-you-image {
+                order: -1;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 400px;
+            }
+
+            .about-text {
+                padding: 40px 24px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-row-2 {
+                grid-template-columns: 1fr;
+                max-width: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .footer-bottom-links a:first-child {
+                margin-left: 0;
+            }
+
+            .final-cta {
+                padding: 100px 0;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+
+            .final-cta-buttons .btn {
+                width: 100%;
+            }
+
+            .story-stats {
+                justify-content: center;
+            }
+
+            .cta-bar-inner {
+                padding: 40px 24px;
+            }
+
+            .btn {
+                padding: 16px 36px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 100svh;
+            }
+
+            .hero-title {
+                font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .pain-text p {
+                font-size: 1rem;
+            }
+
+            .service-card-content {
+                padding: 28px 20px;
+            }
+
+            .testimonial-card {
+                padding: 32px 24px;
+            }
+
+            .pillar-card {
+                padding: 36px 24px;
+            }
+
+            .pillar-number {
+                font-size: 3rem;
+            }
+
+            .step-item {
+                gap: 20px;
+                padding: 28px 20px;
+            }
+
+            .step-number {
+                width: 52px;
+                height: 52px;
+                font-size: 1.2rem;
+            }
+
+            .story-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .container-narrow {
+                padding: 0 16px;
+            }
+
+            .service-detail-content {
+                padding: 36px 16px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="navbar-brand"><img src="imagens/reembelza-weiss.svg" alt="Reembeleza"></a>
-      <a href="#termin" class="navbar-cta">Termin vereinbaren</a>
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-logo">
+                <img src="imagens/reembelza-weiss.svg" alt="Reembeleza Kosmetikstudio">
+            </a>
+            <div class="navbar-cta">
+                <a href="#termin" class="btn" style="border-radius: 12px;">Termin vereinbaren</a>
+            </div>
+            <button class="navbar-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-label">Kosmetikstudio in Koblenz</span>
+            <h1 class="hero-title">Wann haben Sie sich das letzte Mal wirklich sch&ouml;n gef&uuml;hlt?</h1>
+            <p class="hero-subtitle">Brasilianische Sch&ouml;nheitspflege. Deutsche Pr&auml;zision. Ihr neues Wohlgef&uuml;hl. Entdecken Sie im Reembeleza Kosmetikstudio in Koblenz, wie sich professionelle Hautpflege, Brazilian Waxing und k&ouml;rperliches Wohlbefinden anf&uuml;hlen &mdash; mit Technik, Hingabe und einem Ergebnis, das Sie sp&uuml;ren.</p>
+            <a href="#termin" class="btn btn-pink">Jetzt Termin vereinbaren</a>
+        </div>
+    </section>
+
+    <!-- ======================== MARQUEE RIBBONS ======================== -->
+    <div class="marquee-ribbons">
+        <div class="marquee-ribbon marquee-ribbon-1">
+            <div class="marquee-track marquee-left">
+                <span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span>
+            </div>
+        </div>
+        <div class="marquee-ribbon marquee-ribbon-2">
+            <div class="marquee-track marquee-right">
+                <span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span><span>REEMBELEZA</span>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <p class="hero-label">Kosmetikstudio in Koblenz</p>
-      <h1 class="hero-title">Wann haben Sie sich das letzte Mal wirklich <em>schön</em> gefühlt?</h1>
-      <p class="hero-subtitle">Brasilianische Schönheitspflege. Deutsche Präzision. Ihr neues Wohlgefühl. Entdecken Sie im Reembeleza Kosmetikstudio in Koblenz, wie sich professionelle Hautpflege, Brazilian Waxing und körperliches Wohlbefinden anfühlen &mdash; mit Technik, Hingabe und einem Ergebnis, das Sie spüren.</p>
-      <div class="hero-cta">
-        <a href="#termin" class="btn btn-pink">Jetzt Termin vereinbaren</a>
-      </div>
+    <!-- ======================== PAIN SECTION ======================== -->
+    <section class="pain-section" id="kennst-du">
+        <div class="container">
+            <div class="section-label-center" data-aos="fade-up">
+                <span class="section-label">Kennen Sie das?</span>
+            </div>
+            <div class="pain-text" data-aos="fade-up" data-aos-delay="100">
+                <p>Sie geben jeden Tag alles &mdash; f&uuml;r die Arbeit, die Familie, den Alltag. Aber wann haben Sie sich das letzte Mal wirklich Zeit f&uuml;r sich selbst genommen?</p>
+                <p>Vielleicht haben Sie schon Behandlungen ausprobiert, die oberfl&auml;chlich waren. Ergebnisse, die nach wenigen Tagen verschwunden sind. Termine, bei denen Sie sich wie eine Nummer gef&uuml;hlt haben.</p>
+                <p>Und mit der Zeit wird es schwerer. Der Blick in den Spiegel f&uuml;hlt sich nicht mehr so an wie fr&uuml;her. Die eigene Haut, der eigene K&ouml;rper &mdash; irgendwann verliert man das Gef&uuml;hl f&uuml;r sich selbst.</p>
+                <p>Aber das muss nicht so bleiben.</p>
+                <p>Sie w&uuml;nschen sich Ergebnisse, die man sieht und sp&uuml;rt. Pflege, die auf Sie pers&ouml;nlich abgestimmt ist. Einen Ort, an dem Sie sich wirklich entspannen und loslassen k&ouml;nnen.</p>
+                <p class="pain-highlight">Und genau daf&uuml;r gibt es Reembeleza.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== STORY SECTION ======================== -->
+    <section class="story-section" id="warum">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-text" data-aos="fade-left">
+                    <span class="section-label">Warum Reembeleza?</span>
+                    <h2 class="section-title" style="margin-bottom: 24px;">Das Beste aus zwei Welten</h2>
+                    <p>Brasilien ist weltweit bekannt f&uuml;r seine Expertise in &Auml;sthetik, Hautpflege und K&ouml;rperbewusstsein. Deutschland steht f&uuml;r Pr&auml;zision, Qualit&auml;t und h&ouml;chste Anspr&uuml;che.</p>
+                    <p>Reembeleza vereint das Beste aus beiden Welten &mdash; in einem Studio mitten in Koblenz.</p>
+                    <p>Hier geht es nicht um schnelle Termine oder Standardbehandlungen. Hier geht es darum, jede Kundin als das zu sehen, was sie ist: einzigartig. Mit individuellen Bed&uuml;rfnissen, die individuelle Pflege verdienen.</p>
+                    <p>Kein Massenangebot. Keine Kompromisse. Sondern Sch&ouml;nheitspflege mit Herz, Technik und einem klaren Anspruch: dass Sie sich nach jeder Behandlung sch&ouml;ner, leichter und selbstbewusster f&uuml;hlen.</p>
+                    <div class="story-stats">
+                        <div class="story-stat">
+                            <span class="story-stat-value">10+</span>
+                            <span class="story-stat-label">Jahre Erfahrung</span>
+                        </div>
+                        <div class="story-stat">
+                            <span class="story-stat-value">2015</span>
+                            <span class="story-stat-label">Seit</span>
+                        </div>
+                        <div class="story-stat">
+                            <span class="story-stat-value">100%</span>
+                            <span class="story-stat-label">Individuell</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SERVICES OVERVIEW ======================== -->
+    <section class="services-overview" id="behandlungen">
+        <div class="container">
+            <div class="section-label-center" data-aos="fade-up">
+                <span class="section-label">Behandlungen</span>
+            </div>
+            <h2 class="section-title" style="text-align:center;" data-aos="fade-up">Unsere Behandlungen &mdash; f&uuml;r Ihr Wohlbefinden von Kopf bis Fu&szlig;</h2>
+            <p class="section-subtitle section-subtitle-center" data-aos="fade-up" data-aos-delay="100">Jede Behandlung im Reembeleza wird individuell auf Sie abgestimmt. Hier verbinden sich Technik, Sorgfalt und Erfahrung zu einem Erlebnis, das &uuml;ber das Sichtbare hinausgeht.</p>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card" data-aos="fade-up">
+                    <img class="service-card-image" src="https://images.pexels.com/photos/5938555/pexels-photo-5938555.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Brazilian Waxing">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Brazilian Waxing</h3>
+                        <p class="service-card-desc">Glatte Haut mit brasilianischer Pr&auml;zision. Langanhaltende Ergebnisse und schonende Technik.</p>
+                        <ul class="service-card-features">
+                            <li>Pr&auml;zise Haarentfernung ab der Wurzel</li>
+                            <li>Langanhaltend glatte Haut</li>
+                            <li>Schonende Nachpflege</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img class="service-card-image" src="imagens/WhatsApp Image 2026-03-10 at 08.08.45.jpeg" alt="Sugaring">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Sugaring</h3>
+                        <p class="service-card-desc">Sanfte Haarentfernung mit nat&uuml;rlicher Zuckerpaste. Besonders schonend f&uuml;r empfindliche Haut.</p>
+                        <ul class="service-card-features">
+                            <li>100% nat&uuml;rliche Inhaltsstoffe</li>
+                            <li>Weniger Schmerz, weniger Irritation</li>
+                            <li>Ideal f&uuml;r sensible Haut</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card" data-aos="fade-up">
+                    <img class="service-card-image" src="https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Lymphdrainage">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Lymphdrainage</h3>
+                        <p class="service-card-desc">Leichtigkeit, die Sie sofort sp&uuml;ren. Gezielte Stimulation f&uuml;r Vitalit&auml;t und Wohlbefinden.</p>
+                        <ul class="service-card-features">
+                            <li>Reduktion von Schwellungen</li>
+                            <li>Sp&uuml;rbare Leichtigkeit</li>
+                            <li>Therapeutischer Effekt</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-grid-4">
+                <!-- Card 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img class="service-card-image" src="imagens/WhatsApp Image 2026-03-10 at 10.09.58.jpeg" alt="Wimperlifting">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Wimperlifting</h3>
+                        <p class="service-card-desc">Ihr nat&uuml;rlicher Augenaufschlag, perfekt in Szene gesetzt. Ohne k&uuml;nstliche Wimpern.</p>
+                        <ul class="service-card-features">
+                            <li>Nat&uuml;rlich geschwungene Wimpern</li>
+                            <li>Haltbarkeit 6-8 Wochen</li>
+                            <li>Individuelle Anpassung</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card" data-aos="fade-up">
+                    <img class="service-card-image" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80" alt="Massagen">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Massagen</h3>
+                        <p class="service-card-desc">Ihr Moment der Ruhe und Regeneration. Von tiefer Entspannung bis therapeutischer Wirkung.</p>
+                        <ul class="service-card-features">
+                            <li>Hot Stone, Aromatherapie, Lomi Lomi</li>
+                            <li>Shiatsu, Sportmassage</li>
+                            <li>Paarmassage</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img class="service-card-image" src="https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Hautpflege und Microneedling">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Hautpflege &amp; Microneedling</h3>
+                        <p class="service-card-desc">Ihre Haut verdient mehr als Routine. Individuelle Analyse und professionelle Behandlung.</p>
+                        <ul class="service-card-features">
+                            <li>Professionelle Hautreinigung</li>
+                            <li>Microneedling mit Hyalurons&auml;ure</li>
+                            <li>Augenbrauenformung</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+                <!-- Card 7: Manik&uuml;re und Pedik&uuml;re -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <img class="service-card-image" src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Manik&uuml;re und Pedik&uuml;re">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Manik&uuml;re &amp; Pedik&uuml;re</h3>
+                        <p class="service-card-desc">Gepflegte H&auml;nde und F&uuml;&szlig;e bis ins Detail. Ein Zeichen von Selbstf&uuml;rsorge.</p>
+                        <ul class="service-card-features">
+                            <li>Professionelle Nagelpflege</li>
+                            <li>Verw&ouml;hnende Handmassage</li>
+                            <li>Entspannende Fu&szlig;massage</li>
+                        </ul>
+                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SERVICE DETAILS ======================== -->
+    <div id="service-details">
+        <!-- Detail 1: Brazilian Waxing -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.pexels.com/photos/5938555/pexels-photo-5938555.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Brazilian Waxing" data-aos="fade-right"></div>
+                <div class="service-detail-content" data-aos="fade-left">
+                    <h2 class="service-detail-title">Brazilian Waxing</h2>
+                    <p class="service-detail-subtitle">Glatte Haut mit brasilianischer Pr&auml;zision</p>
+                    <p>Die brasilianische Waxing-Technik ist weltweit f&uuml;r ihre Gr&uuml;ndlichkeit, Pr&auml;zision und langanhaltenden Ergebnisse bekannt.</p>
+                    <p>Im Reembeleza achten wir auf jedes Detail: die richtige Temperatur des Wachses, die optimale Anwendungstechnik und eine sorgf&auml;ltige Nachbehandlung der Haut.</p>
+                    <h4>Was Sie erwartet:</h4>
+                    <ul class="service-detail-list">
+                        <li>Pr&auml;zise Haarentfernung ab der Wurzel</li>
+                        <li>Langanhaltend glatte Haut &mdash; mehrere Wochen lang</li>
+                        <li>Schonende Technik, die Hautirritationen reduziert</li>
+                        <li>Sorgf&auml;ltige Nachpflege f&uuml;r ein samtiges Hautgef&uuml;hl</li>
+                        <li>Ausf&uuml;hrliche Beratung f&uuml;r Ihre individuellen Bed&uuml;rfnisse</li>
+                    </ul>
+                    <p class="service-detail-result">Das Ergebnis: seidig glatte Haut, ein frisches K&ouml;rpergef&uuml;hl und ein Selbstbewusstsein, das wochenlang anh&auml;lt.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Brazilian Waxing buchen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail 2: Sugaring -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="imagens/WhatsApp Image 2026-03-10 at 08.08.45.jpeg" alt="Sugaring" data-aos="fade-left"></div>
+                <div class="service-detail-content" data-aos="fade-right">
+                    <h2 class="service-detail-title">Sugaring</h2>
+                    <p class="service-detail-subtitle">Sanfte Haarentfernung mit nat&uuml;rlicher Zuckerpaste</p>
+                    <p>Sugaring ist die nat&uuml;rliche Alternative zum klassischen Waxing &mdash; besonders schonend f&uuml;r empfindliche Haut.</p>
+                    <p>Die Zuckerpaste wird in Haarwuchsrichtung entfernt. Das reduziert Schmerzen, minimiert Hautreizungen und ist ideal f&uuml;r sensible Hauttypen.</p>
+                    <h4>Was Sie erwartet:</h4>
+                    <ul class="service-detail-list">
+                        <li>100% nat&uuml;rliche Inhaltsstoffe (Zucker, Zitrone, Wasser)</li>
+                        <li>Besonders sanft f&uuml;r empfindliche Haut und Intimbereich</li>
+                        <li>Haarentfernung in Wuchsrichtung &mdash; weniger Schmerz, weniger eingewachsene Haare</li>
+                        <li>Langanhaltende Ergebnisse wie beim Waxing</li>
+                        <li>Geeignet auch f&uuml;r Allergikerinnen</li>
+                    </ul>
+                    <p class="service-detail-result">Perfekt f&uuml;r alle, die nat&uuml;rliche Pflege und sanfte Behandlung bevorzugen.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Sugaring buchen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail 3: Lymphdrainage -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Lymphdrainage" data-aos="fade-right"></div>
+                <div class="service-detail-content" data-aos="fade-left">
+                    <h2 class="service-detail-title">Lymphdrainage</h2>
+                    <p class="service-detail-subtitle">Leichtigkeit, die Sie sofort sp&uuml;ren</p>
+                    <p>Lymphdrainage ist weit mehr als eine entspannende Massage. Es ist eine gezielte, rhythmische Technik, die Ihr Lymphsystem aktiviert, Fl&uuml;ssigkeitsansammlungen reduziert und den K&ouml;rper von innen revitalisiert.</p>
+                    <p>Im Reembeleza f&uuml;hren wir die Lymphdrainage mit therapeutischer Pr&auml;zision durch &mdash; strategisch, sanft und wirkungsvoll.</p>
+                    <h4>Was Sie erwartet:</h4>
+                    <ul class="service-detail-list">
+                        <li>Gezielte Stimulation der Lymphknoten und Lymphbahnen</li>
+                        <li>Sichtbare Reduktion von Schwellungen und Wassereinlagerungen</li>
+                        <li>Sp&uuml;rbare Leichtigkeit und Vitalit&auml;t bereits nach der ersten Sitzung</li>
+                        <li>Verbesserung der Hautstruktur und des K&ouml;rperkonturs</li>
+                        <li>Tiefe Entspannung mit therapeutischem Effekt</li>
+                    </ul>
+                    <p class="service-detail-result">Viele Kundinnen berichten schon nach der ersten Sitzung von einem sichtbar entschw&auml;mmten K&ouml;rper und einem v&ouml;llig neuen K&ouml;rpergef&uuml;hl.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Lymphdrainage buchen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail 4: Wimperlifting -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="imagens/WhatsApp Image 2026-03-10 at 10.09.58.jpeg" alt="Wimperlifting" data-aos="fade-left"></div>
+                <div class="service-detail-content" data-aos="fade-right">
+                    <h2 class="service-detail-title">Wimperlifting</h2>
+                    <p class="service-detail-subtitle">Ihr nat&uuml;rlicher Augenaufschlag, perfekt in Szene gesetzt</p>
+                    <p>Wimperlifting hebt Ihre nat&uuml;rlichen Wimpern sanft an und verleiht Ihrem Blick mehr Ausdruck &mdash; ganz ohne k&uuml;nstliche Wimpern oder t&auml;gliches Schminken.</p>
+                    <h4>Was Sie erwartet:</h4>
+                    <ul class="service-detail-list">
+                        <li>Nat&uuml;rlich geschwungene, voller wirkende Wimpern</li>
+                        <li>Haltbarkeit von 6 bis 8 Wochen</li>
+                        <li>Kein Wimpernkleber, keine Extensions &mdash; nur Ihre eigenen Wimpern, perfekt geformt</li>
+                        <li>Zeitsparend im Alltag: aufwachen und direkt strahlen</li>
+                        <li>Individuelle Anpassung an Ihre Augenform und Wimpernl&auml;nge</li>
+                    </ul>
+                    <p class="service-detail-result">Ideal f&uuml;r Frauen, die einen ausdrucksvollen Blick m&ouml;chten &mdash; nat&uuml;rlich, elegant und ohne t&auml;glichen Aufwand.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Wimperlifting buchen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail 5: Massagen -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80" alt="Massagen" data-aos="fade-right"></div>
+                <div class="service-detail-content" data-aos="fade-left">
+                    <h2 class="service-detail-title">Massagen</h2>
+                    <p class="service-detail-subtitle">Ihr Moment der Ruhe und Regeneration</p>
+                    <p>Im Reembeleza bieten wir ein breites Spektrum an Massagetechniken &mdash; von tiefer Entspannung bis hin zu therapeutischer Wirkung. Jede Massage wird auf Ihre individuellen Bed&uuml;rfnisse abgestimmt.</p>
+                    <h4>Unser Angebot:</h4>
+                    <ul class="service-detail-list">
+                        <li>Entspannende Ganzk&ouml;rpermassage (60 oder 90 Min.)</li>
+                        <li>Hot Stone Massage &mdash; W&auml;rme, die tief in die Muskulatur eindringt</li>
+                        <li>Aromatherapie-Massage &mdash; &auml;therische &Ouml;le f&uuml;r K&ouml;rper und Geist</li>
+                        <li>Anti-Stress / Lomi Lomi &mdash; hawaiianische Technik gegen Verspannungen</li>
+                        <li>Shiatsu &mdash; japanische Druckpunkttechnik f&uuml;r energetischen Ausgleich</li>
+                        <li>Sportmassage &mdash; Regeneration und Leistungssteigerung</li>
+                        <li>Fu&szlig;reflexzonenmassage &mdash; &uuml;ber die F&uuml;&szlig;e den ganzen K&ouml;rper ansprechen</li>
+                        <li>Paarmassage &mdash; gemeinsame Entspannung zu zweit</li>
+                    </ul>
+                    <p class="service-detail-result">Ob Alltagsstress, k&ouml;rperliche Verspannungen oder einfach eine Auszeit &mdash; hier finden Sie genau das, was Ihr K&ouml;rper braucht.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Massage buchen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail 6: Maniküre und Pediküre -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Manik&uuml;re und Pedik&uuml;re" data-aos="fade-left"></div>
+                <div class="service-detail-content" data-aos="fade-right">
+                    <h2 class="service-detail-title">Manik&uuml;re und Pedik&uuml;re</h2>
+                    <p class="service-detail-subtitle">Gepflegte H&auml;nde und F&uuml;&szlig;e bis ins Detail</p>
+                    <p>Gepflegte H&auml;nde und F&uuml;&szlig;e sind mehr als &Auml;sthetik &mdash; sie sind ein Zeichen von Selbstf&uuml;rsorge.</p>
+                    <h4>Manik&uuml;re:</h4>
+                    <ul class="service-detail-list">
+                        <li>Professionelles K&uuml;rzen, Feilen und Polieren der N&auml;gel</li>
+                        <li>Sorgf&auml;ltige Nagelhautentfernung</li>
+                        <li>Verw&ouml;hnende Handmassage zum Abschluss</li>
+                    </ul>
+                    <h4>Pedik&uuml;re:</h4>
+                    <ul class="service-detail-list">
+                        <li>Gr&uuml;ndliche Hornhautentfernung</li>
+                        <li>Nagelformung und Nagelhautpflege</li>
+                        <li>Nagel-&Ouml;l und Pflegebehandlung</li>
+                        <li>Entspannende Fu&szlig;massage</li>
+                    </ul>
+                    <p class="service-detail-result">Perfekt gepflegt &mdash; von den Fingerspitzen bis zu den Zehen.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Manik&uuml;re / Pedik&uuml;re buchen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail 7: Hautpflege und Microneedling -->
+        <section class="service-detail">
+            <div class="service-detail-grid">
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Hautpflege und Microneedling" data-aos="fade-right"></div>
+                <div class="service-detail-content" data-aos="fade-left">
+                    <h2 class="service-detail-title">Hautpflege und Microneedling</h2>
+                    <p class="service-detail-subtitle">Ihre Haut verdient mehr als Routine</p>
+                    <p>Jede Haut ist anders. Deshalb beginnt jede Hautpflegebehandlung im Reembeleza mit einer individuellen Analyse, bevor wir den passenden Behandlungsplan erstellen.</p>
+                    <h4>Unser Angebot:</h4>
+                    <ul class="service-detail-list">
+                        <li>Professionelle Hautreinigung mit hochwertigen Produkten</li>
+                        <li>Microneedling mit hochkonzentrierter Hyalurons&auml;ure &mdash; f&uuml;r Hautstraffung, Porenverfeinerung und Feuchtigkeitsversorgung</li>
+                        <li>Augenbrauenformung (Zupfen oder Waxing) und F&auml;rben</li>
+                        <li>Individuelle Pflegeempfehlungen f&uuml;r Zuhause</li>
+                    </ul>
+                    <p class="service-detail-result">Die Haut ist das gr&ouml;&szlig;te Organ Deines K&ouml;rpers. Sie verdient professionelle Aufmerksamkeit.</p>
+                    <a href="#termin" class="btn btn-primary btn-sm">Hautpflege buchen</a>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
 
-  <!-- ===================== DOR / IDENTIFICACAO ===================== -->
-  <section class="pain-section" id="kennst-du">
-    <div class="container">
-      <div class="pain-content">
-        <span class="section-label" data-aos="fade-up">Kennen Sie das?</span>
-        <div data-aos="fade-up" data-aos-delay="100">
-          <p>Sie geben jeden Tag alles &mdash; für die Arbeit, die Familie, den Alltag. Aber wann haben Sie sich das letzte Mal wirklich Zeit für sich selbst genommen?</p>
-          <p>Vielleicht haben Sie schon Behandlungen ausprobiert, die oberflächlich waren. Ergebnisse, die nach wenigen Tagen verschwunden sind. Termine, bei denen Sie sich wie eine Nummer gefühlt haben.</p>
-          <p>Und mit der Zeit wird es schwerer. Der Blick in den Spiegel fühlt sich nicht mehr so an wie früher. Die eigene Haut, der eigene Körper &mdash; irgendwann verliert man das Gefühl für sich selbst.</p>
-          <p>Aber das muss nicht so bleiben.</p>
-          <p>Sie wünschen sich Ergebnisse, die man sieht und spürt. Pflege, die auf Sie persönlich abgestimmt ist. Einen Ort, an dem Sie sich wirklich entspannen und loslassen können.</p>
-          <p class="pain-highlight">Und genau dafür gibt es Reembeleza.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== HISTORIA / ORIGEM ===================== -->
-  <section class="story-section" id="warum">
-    <div class="container">
-      <div class="story-grid">
-        <div class="story-image" data-aos="fade-right">
-          <img src="https://images.pexels.com/photos/3764013/pexels-photo-3764013.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Reembeleza - Schönheitspflege und Wohlbefinden" loading="lazy">
-        </div>
-        <div class="story-text" data-aos="fade-left">
-          <span class="section-label">Warum Reembeleza?</span>
-          <h2 class="section-title">Das Beste aus zwei Welten</h2>
-          <p>Brasilien ist weltweit bekannt für seine Expertise in Ästhetik, Hautpflege und Körperbewusstsein. Deutschland steht für Präzision, Qualität und höchste Ansprüche.</p>
-          <p>Reembeleza vereint das Beste aus beiden Welten &mdash; in einem Studio mitten in Koblenz.</p>
-          <p>Hier geht es nicht um schnelle Termine oder Standardbehandlungen. Hier geht es darum, jede Kundin als das zu sehen, was sie ist: einzigartig. Mit individuellen Bedürfnissen, die individuelle Pflege verdienen.</p>
-          <p>Kein Massenangebot. Keine Kompromisse. Sondern Schönheitspflege mit Herz, Technik und einem klaren Anspruch: dass Sie sich nach jeder Behandlung schöner, leichter und selbstbewusster fühlen.</p>
-          <div class="story-stats">
-            <div class="stat-item">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Jahre Erfahrung</div>
+    <!-- ======================== CTA BAR ======================== -->
+    <section class="cta-bar">
+        <div class="container">
+            <div class="cta-bar-inner" data-aos="fade-up">
+                <h3>Noch unsicher, welche Behandlung am besten zu Dir passt?</h3>
+                <p>Kein Problem &mdash; wir beraten Sie gerne pers&ouml;nlich und finden gemeinsam die ideale Pflege f&uuml;r Sie.</p>
+                <a href="#termin" class="btn btn-pink">Lassen Sie sich beraten &mdash; Jetzt Kontakt aufnehmen</a>
+                <a href="tel:+4915167065729" class="cta-bar-phone">Oder ruf uns direkt an: +49 151 67065729</a>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">2015</div>
-              <div class="stat-label">Seit</div>
+        </div>
+    </section>
+
+    <!-- ======================== PILLARS ======================== -->
+    <section class="pillars-section" id="besonders">
+        <div class="container">
+            <div class="section-label-center" data-aos="fade-up">
+                <span class="section-label">Was uns auszeichnet</span>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Individuell</div>
+            <h2 class="section-title" style="text-align:center;" data-aos="fade-up">Was Reembeleza besonders macht</h2>
+            <p class="section-subtitle section-subtitle-center" data-aos="fade-up" data-aos-delay="100">Drei S&auml;ulen, die jede Behandlung bei uns pr&auml;gen.</p>
+
+            <div class="pillars-grid">
+                <div class="pillar-card" data-aos="fade-up">
+                    <div class="pillar-number">01</div>
+                    <h3 class="pillar-title">Brasilianische Technik &mdash; weltweit anerkannt</h3>
+                    <p class="pillar-text">Brasilien ist eine der f&uuml;hrenden Nationen in &Auml;sthetik und K&ouml;rperpflege. Diese Expertise bringen wir nach Koblenz &mdash; mit Techniken, die auf Pr&auml;zision, Sorgfalt und sichtbaren Ergebnissen basieren.</p>
+                </div>
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pillar-number">02</div>
+                    <h3 class="pillar-title">Deutscher Qualit&auml;tsstandard</h3>
+                    <p class="pillar-text">H&ouml;chste Hygiene, professionelle Ausstattung und aktuelle Behandlungsprotokolle. Jeder Handgriff folgt einem klaren Standard &mdash; sicher, sauber und zuverl&auml;ssig.</p>
+                </div>
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pillar-number">03</div>
+                    <h3 class="pillar-title">Pers&ouml;nliche Betreuung &mdash; keine Kundin ist wie die andere</h3>
+                    <p class="pillar-text">Bei uns gibt es keine Standardbehandlungen. Wir h&ouml;ren zu, analysieren und passen jede Behandlung individuell an Ihre Haut, Ihren K&ouml;rper und Ihre W&uuml;nsche an.</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===================== SERVICOS ===================== -->
-  <section class="services-section" id="behandlungen">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">Behandlungen</span>
-        <h2 class="section-title">Unsere Behandlungen &mdash; für Ihr Wohlbefinden von Kopf bis Fuss</h2>
-        <p class="section-subtitle">Jede Behandlung im Reembeleza wird individuell auf Sie abgestimmt. Hier verbinden sich Technik, Sorgfalt und Erfahrung zu einem Erlebnis, das über das Sichtbare hinausgeht.</p>
-      </div>
-
-      <!-- Service Cards Grid (overview) -->
-      <div class="services-grid">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="service-icon"><i data-lucide="sparkles" style="width:24px;height:24px;"></i></div>
-          <h3>Brazilian Waxing</h3>
-          <p>Glatte Haut mit brasilianischer Präzision. Langanhaltende Ergebnisse und schonende Technik.</p>
-          <ul class="service-features">
-            <li>Präzise Haarentfernung ab der Wurzel</li>
-            <li>Langanhaltend glatte Haut</li>
-            <li>Schonende Nachpflege</li>
-          </ul>
-          <a href="#termin" class="btn btn-outline">Termin buchen</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon"><i data-lucide="droplets" style="width:24px;height:24px;"></i></div>
-          <h3>Sugaring</h3>
-          <p>Sanfte Haarentfernung mit natürlicher Zuckerpaste. Besonders schonend für empfindliche Haut.</p>
-          <ul class="service-features">
-            <li>100% natürliche Inhaltsstoffe</li>
-            <li>Weniger Schmerz, weniger Irritation</li>
-            <li>Ideal für sensible Haut</li>
-          </ul>
-          <a href="#termin" class="btn btn-outline">Termin buchen</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon"><i data-lucide="waves" style="width:24px;height:24px;"></i></div>
-          <h3>Lymphdrainage</h3>
-          <p>Leichtigkeit, die Sie sofort spüren. Gezielte Stimulation für Vitalität und Wohlbefinden.</p>
-          <ul class="service-features">
-            <li>Reduktion von Schwellungen</li>
-            <li>Spürbare Leichtigkeit</li>
-            <li>Therapeutischer Effekt</li>
-          </ul>
-          <a href="#termin" class="btn btn-outline">Termin buchen</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="service-icon"><i data-lucide="eye" style="width:24px;height:24px;"></i></div>
-          <h3>Wimperlifting</h3>
-          <p>Ihr natürlicher Augenaufschlag, perfekt in Szene gesetzt. Ohne künstliche Wimpern.</p>
-          <ul class="service-features">
-            <li>Natürlich geschwungene Wimpern</li>
-            <li>Haltbarkeit 6-8 Wochen</li>
-            <li>Individuelle Anpassung</li>
-          </ul>
-          <a href="#termin" class="btn btn-outline">Termin buchen</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon"><i data-lucide="hand" style="width:24px;height:24px;"></i></div>
-          <h3>Massagen</h3>
-          <p>Ihr Moment der Ruhe und Regeneration. Von tiefer Entspannung bis therapeutischer Wirkung.</p>
-          <ul class="service-features">
-            <li>Hot Stone, Aromatherapie, Lomi Lomi</li>
-            <li>Shiatsu, Sportmassage</li>
-            <li>Paarmassage</li>
-          </ul>
-          <a href="#termin" class="btn btn-outline">Termin buchen</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon"><i data-lucide="flower-2" style="width:24px;height:24px;"></i></div>
-          <h3>Hautpflege &amp; Microneedling</h3>
-          <p>Ihre Haut verdient mehr als Routine. Individuelle Analyse und professionelle Behandlung.</p>
-          <ul class="service-features">
-            <li>Professionelle Hautreinigung</li>
-            <li>Microneedling mit Hyaluronsäure</li>
-            <li>Augenbrauenformung</li>
-          </ul>
-          <a href="#termin" class="btn btn-outline">Termin buchen</a>
-        </div>
-      </div>
-
-      <!-- ===== DETALHES DOS SERVICOS ===== -->
-
-      <!-- Brazilian Waxing Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Brazilian Waxing - Professionelle Behandlung" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Brazilian Waxing &mdash; Glatte Haut mit brasilianischer Präzision</h3>
-            <p>Die brasilianische Waxing-Technik ist weltweit für ihre Gründlichkeit, Präzision und langanhaltenden Ergebnisse bekannt.</p>
-            <p>Im Reembeleza achten wir auf jedes Detail: die richtige Temperatur des Wachses, die optimale Anwendungstechnik und eine sorgfältige Nachbehandlung der Haut.</p>
-            <h4>Was Sie erwartet:</h4>
-            <ul class="service-detail-features">
-              <li>Präzise Haarentfernung ab der Wurzel</li>
-              <li>Langanhaltend glatte Haut &mdash; mehrere Wochen lang</li>
-              <li>Schonende Technik, die Hautirritationen reduziert</li>
-              <li>Sorgfältige Nachpflege für ein samtiges Hautgefühl</li>
-              <li>Ausführliche Beratung für Ihre individuellen Bedürfnisse</li>
-            </ul>
-            <p class="service-detail-result">Das Ergebnis: seidig glatte Haut, ein frisches Körpergefühl und ein Selbstbewusstsein, das wochenlang anhält.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Brazilian Waxing buchen</a>
+            <div class="pillars-bottom" data-aos="fade-up">
+                <p><span class="pink-highlight">Seit 2015 aktiv.</span> &Uuml;ber 10 Jahre Erfahrung. Hunderte zufriedene Kundinnen in Koblenz.</p>
+                <p>Das Ergebnis: eine Verbindung aus Fachwissen, Qualit&auml;t und menschlicher W&auml;rme, die Sie bei jeder Behandlung sp&uuml;ren.</p>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Sugaring Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Sugaring - Natürliche Inhaltsstoffe" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Sugaring &mdash; Sanfte Haarentfernung mit natürlicher Zuckerpaste</h3>
-            <p>Sugaring ist die natürliche Alternative zum klassischen Waxing &mdash; besonders schonend für empfindliche Haut.</p>
-            <p>Die Zuckerpaste wird in Haarwuchsrichtung entfernt. Das reduziert Schmerzen, minimiert Hautreizungen und ist ideal für sensible Hauttypen.</p>
-            <h4>Was Sie erwartet:</h4>
-            <ul class="service-detail-features">
-              <li>100% natürliche Inhaltsstoffe (Zucker, Zitrone, Wasser)</li>
-              <li>Besonders sanft für empfindliche Haut und Intimbereich</li>
-              <li>Haarentfernung in Wuchsrichtung &mdash; weniger Schmerz, weniger eingewachsene Haare</li>
-              <li>Langanhaltende Ergebnisse wie beim Waxing</li>
-              <li>Geeignet auch für Allergikerinnen</li>
-            </ul>
-            <p class="service-detail-result">Perfekt für alle, die natürliche Pflege und sanfte Behandlung bevorzugen.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Sugaring buchen</a>
+    <!-- ======================== STEPS ======================== -->
+    <section class="steps-section" id="ablauf">
+        <div class="container">
+            <div class="section-label-center" data-aos="fade-up">
+                <span class="section-label">Ihr Besuch</span>
             </div>
-          </div>
-        </div>
-      </div>
+            <h2 class="section-title" style="text-align:center;" data-aos="fade-up">Ihr Besuch bei uns &mdash; von der Buchung bis zum Ergebnis</h2>
 
-      <!-- Lymphdrainage Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Lymphdrainage - Entspannung und Leichtigkeit" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Lymphdrainage &mdash; Leichtigkeit, die Sie sofort spüren</h3>
-            <p>Lymphdrainage ist weit mehr als eine entspannende Massage. Es ist eine gezielte, rhythmische Technik, die Ihr Lymphsystem aktiviert, Flüssigkeitsansammlungen reduziert und den Körper von innen revitalisiert.</p>
-            <p>Im Reembeleza führen wir die Lymphdrainage mit therapeutischer Präzision durch &mdash; strategisch, sanft und wirkungsvoll.</p>
-            <h4>Was Sie erwartet:</h4>
-            <ul class="service-detail-features">
-              <li>Gezielte Stimulation der Lymphknoten und Lymphbahnen</li>
-              <li>Sichtbare Reduktion von Schwellungen und Wassereinlagerungen</li>
-              <li>Spürbare Leichtigkeit und Vitalität bereits nach der ersten Sitzung</li>
-              <li>Verbesserung der Hautstruktur und des Körperkonturs</li>
-              <li>Tiefe Entspannung mit therapeutischem Effekt</li>
-            </ul>
-            <p class="service-detail-result">Viele Kundinnen berichten schon nach der ersten Sitzung von einem sichtbar entschwämmten Körper und einem völlig neuen Körpergefühl.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Lymphdrainage buchen</a>
+            <div class="steps-list">
+                <div class="step-item" data-aos="fade-up">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Terminbuchung</h3>
+                        <p>W&auml;hlen Sie Ihre gew&uuml;nschte Behandlung und buchen Sie Ihren Termin online oder per Telefon. Wir finden gemeinsam den besten Zeitpunkt f&uuml;r Sie.</p>
+                    </div>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Pers&ouml;nliches Gespr&auml;ch</h3>
+                        <p>Vor jeder Behandlung nehmen wir uns Zeit f&uuml;r Sie. Wir besprechen Ihre W&uuml;nsche, analysieren Ihre Haut oder Ihren K&ouml;rper und stimmen die Behandlung individuell ab.</p>
+                    </div>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Ihre Behandlung</h3>
+                        <p>In einer ruhigen, einladenden Atmosph&auml;re f&uuml;hren wir die Behandlung mit h&ouml;chster Sorgfalt durch. Sanfte Musik, angenehmes Licht und volle Aufmerksamkeit &mdash; damit Sie sich vollkommen entspannen k&ouml;nnen.</p>
+                    </div>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Nachpflege und Empfehlungen</h3>
+                        <p>Nach der Behandlung erhalten Sie professionelle Tipps und Pflegeempfehlungen, damit Ihre Ergebnisse l&auml;nger anhalten und Ihre Haut optimal versorgt bleibt.</p>
+                    </div>
+                </div>
+                <div class="step-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Ihr neues Wohlgef&uuml;hl</h3>
+                        <p>Sie verlassen unser Studio mit einem L&auml;cheln, frischer Haut und einem Gef&uuml;hl von Leichtigkeit und Selbstvertrauen.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Wimperlifting Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop&q=80" alt="Wimperlifting - Natürlicher Augenaufschlag" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Wimperlifting &mdash; Ihr natürlicher Augenaufschlag, perfekt in Szene gesetzt</h3>
-            <p>Wimperlifting hebt Ihre natürlichen Wimpern sanft an und verleiht Ihrem Blick mehr Ausdruck &mdash; ganz ohne künstliche Wimpern oder tägliches Schminken.</p>
-            <h4>Was Sie erwartet:</h4>
-            <ul class="service-detail-features">
-              <li>Natürlich geschwungene, voller wirkende Wimpern</li>
-              <li>Haltbarkeit von 6 bis 8 Wochen</li>
-              <li>Kein Wimpernkleber, keine Extensions &mdash; nur Ihre eigenen Wimpern, perfekt geformt</li>
-              <li>Zeitsparend im Alltag: aufwachen und direkt strahlen</li>
-              <li>Individuelle Anpassung an Ihre Augenform und Wimpernlänge</li>
-            </ul>
-            <p class="service-detail-result">Ideal für Frauen, die einen ausdrucksvollen Blick möchten &mdash; natürlich, elegant und ohne täglichen Aufwand.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Wimperlifting buchen</a>
+            <div class="steps-cta" data-aos="fade-up">
+                <a href="#termin" class="btn btn-primary">Jetzt Ihren Termin buchen</a>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Massagen Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80" alt="Massagen - Entspannung und Regeneration" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Massagen &mdash; Ihr Moment der Ruhe und Regeneration</h3>
-            <p>Im Reembeleza bieten wir ein breites Spektrum an Massagetechniken &mdash; von tiefer Entspannung bis hin zu therapeutischer Wirkung. Jede Massage wird auf Ihre individuellen Bedürfnisse abgestimmt.</p>
-            <h4>Unser Angebot:</h4>
-            <ul class="service-detail-features">
-              <li>Entspannende Ganzkörpermassage (60 oder 90 Min.)</li>
-              <li>Hot Stone Massage &mdash; Wärme, die tief in die Muskulatur eindringt</li>
-              <li>Aromatherapie-Massage &mdash; ätherische Öle für Körper und Geist</li>
-              <li>Anti-Stress / Lomi Lomi &mdash; hawaiianische Technik gegen Verspannungen</li>
-              <li>Shiatsu &mdash; japanische Druckpunkttechnik für energetischen Ausgleich</li>
-              <li>Sportmassage &mdash; Regeneration und Leistungssteigerung</li>
-              <li>Fußreflexzonenmassage &mdash; über die Füße den ganzen Körper ansprechen</li>
-              <li>Paarmassage &mdash; gemeinsame Entspannung zu zweit</li>
-            </ul>
-            <p class="service-detail-result">Ob Alltagsstress, körperliche Verspannungen oder einfach eine Auszeit &mdash; hier finden Sie genau das, was Ihr Körper braucht.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Massage buchen</a>
+    <!-- ======================== FOR YOU ======================== -->
+    <section class="for-you-section" id="fuer-dich">
+        <div class="container">
+            <div data-aos="fade-up">
+                <span class="section-label">F&uuml;r Sie</span>
+                <h2 class="section-title">Reembeleza ist f&uuml;r Sie, wenn...</h2>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Manikuere und Pedikuere Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Maniküre - Gepflegte Nägel" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Maniküre und Pediküre &mdash; Gepflegte Hände und Füße bis ins Detail</h3>
-            <p>Gepflegte Hände und Füße sind mehr als Ästhetik &mdash; sie sind ein Zeichen von Selbstfürsorge.</p>
-            <h4>Maniküre:</h4>
-            <ul class="service-detail-features">
-              <li>Professionelles Kürzen, Feilen und Polieren der Nägel</li>
-              <li>Sorgfältige Nagelhautentfernung</li>
-              <li>Verwöhnende Handmassage zum Abschluss</li>
-            </ul>
-            <h4>Pediküre:</h4>
-            <ul class="service-detail-features">
-              <li>Gründliche Hornhautentfernung</li>
-              <li>Nagelformung und Nagelhautpflege</li>
-              <li>Nägel-Oel und Pflegebehandlung</li>
-              <li>Entspannende Fußmassage</li>
-            </ul>
-            <p class="service-detail-result">Perfekt gepflegt &mdash; von den Fingerspitzen bis zu den Zehen.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Maniküre / Pediküre buchen</a>
+            <div class="for-you-grid">
+                <div data-aos="fade-right">
+                    <ul class="for-you-list">
+                        <li>Sie sich endlich Zeit f&uuml;r sich selbst nehmen m&ouml;chten &mdash; ohne schlechtes Gewissen</li>
+                        <li>Sie Ergebnisse suchen, die man sieht und sp&uuml;rt, nicht nur oberfl&auml;chliche Behandlungen</li>
+                        <li>Sie Wert auf nat&uuml;rliche, harmonische Ergebnisse legen &mdash; nichts &Uuml;bertriebenes oder K&uuml;nstliches</li>
+                        <li>Sie eine Fachfrau m&ouml;chten, die wirklich zuh&ouml;rt und auf Ihre individuellen Bed&uuml;rfnisse eingeht</li>
+                        <li>Sie mehr als einen Termin suchen &mdash; ein Erlebnis, das K&ouml;rper und Seele gut tut</li>
+                        <li>Sie Qualit&auml;t, Hygiene und Professionalit&auml;t sch&auml;tzen</li>
+                        <li>Sie einen vertrauensvollen Ort suchen, an den Sie immer wieder gerne zur&uuml;ckkommen</li>
+                    </ul>
+                    <p class="for-you-closing">Egal, ob Sie zum ersten Mal kommen oder schon lange nach dem richtigen Studio suchen &mdash; bei Reembeleza sind Sie willkommen.</p>
+                </div>
+                <div class="for-you-image" data-aos="fade-left">
+                    <img src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Reembeleza f&uuml;r Sie">
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Hautpflege Detail -->
-      <div class="service-detail" data-aos="fade-up">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Hautpflege - Professionelle Gesichtsbehandlung" loading="lazy">
-          </div>
-          <div class="service-detail-text">
-            <h3>Hautpflege und Microneedling &mdash; Ihre Haut verdient mehr als Routine</h3>
-            <p>Jede Haut ist anders. Deshalb beginnt jede Hautpflegebehandlung im Reembeleza mit einer individuellen Analyse, bevor wir den passenden Behandlungsplan erstellen.</p>
-            <h4>Unser Angebot:</h4>
-            <ul class="service-detail-features">
-              <li>Professionelle Hautreinigung mit hochwertigen Produkten</li>
-              <li>Microneedling mit hochkonzentrierter Hyaluronsäure &mdash; für Hautstraffung, Porenverfeinerung und Feuchtigkeitsversorgung</li>
-              <li>Augenbrauenformung (Zupfen oder Waxing) und Färben</li>
-              <li>Individuelle Pflegeempfehlungen für Zuhause</li>
-            </ul>
-            <p class="service-detail-result">Die Haut ist das größte Organ Deines Körpers. Sie verdient professionelle Aufmerksamkeit.</p>
-            <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Hautpflege buchen</a>
+    <!-- ======================== TESTIMONIALS ======================== -->
+    <section class="testimonials-section" id="kundenstimmen">
+        <div class="container">
+            <div class="section-label-center" data-aos="fade-up">
+                <span class="section-label">Kundenstimmen</span>
             </div>
-          </div>
-        </div>
-      </div>
+            <h2 class="section-title" style="text-align:center;" data-aos="fade-up">Was unsere Kundinnen sagen</h2>
 
-      <!-- CTA intermediario -->
-      <div class="services-cta-bar" style="background: var(--off-white); border: 1px solid var(--grey-lighter); margin-top: 40px;" data-aos="fade-up">
-        <p>Noch unsicher, welche Behandlung am besten zu Dir passt?</p>
-        <p class="sub">Kein Problem &mdash; wir beraten Sie gerne persönlich und finden gemeinsam die ideale Pflege für Sie.</p>
-        <a href="#termin" class="btn btn-pink">Lassen Sie sich beraten &mdash; Jetzt Kontakt aufnehmen</a>
-        <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915167065729">+49 151 67065729</a></span>
-      </div>
-    </div>
-  </section>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Seit ich bei Renata bin, gehe ich nirgendwo anders mehr hin. Das Brazilian Waxing ist so pr&auml;zise und gleichzeitig schonend &mdash; ich habe noch nie so glatte Haut gehabt. Und die Atmosph&auml;re ist einfach wunderbar.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div>
+                            <div class="testimonial-name">Claudia M., 34</div>
+                            <div class="testimonial-role">Unternehmerin aus Koblenz</div>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- ===================== DIFERENCIAIS (3 PILARES) ===================== -->
-  <section class="pillars-section" id="besonders">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">Was uns auszeichnet</span>
-        <h2 class="section-title">Was Reembeleza besonders macht</h2>
-        <p class="section-subtitle">Drei Säulen, die jede Behandlung bei uns prägen.</p>
-      </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Die Lymphdrainage hat mir unglaublich gut getan. Ich f&uuml;hlte mich danach so leicht und entspannt. Renata erkl&auml;rt genau, was sie macht und warum. Man merkt die Erfahrung in jedem Handgriff.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Sophie K., 41</div>
+                            <div class="testimonial-role">Lehrerin</div>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="pillars-grid">
-        <div class="pillar-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="pillar-number">01</div>
-          <h3>Brasilianische Technik &mdash; weltweit anerkannt</h3>
-          <p>Brasilien ist eine der führenden Nationen in Ästhetik und Körperpflege. Diese Expertise bringen wir nach Koblenz &mdash; mit Techniken, die auf Präzision, Sorgfalt und sichtbaren Ergebnissen basieren.</p>
-        </div>
-
-        <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="pillar-number">02</div>
-          <h3>Deutscher Qualitätsstandard</h3>
-          <p>Höchste Hygiene, professionelle Ausstattung und aktuelle Behandlungsprotokolle. Jeder Handgriff folgt einem klaren Standard &mdash; sicher, sauber und zuverlässig.</p>
-        </div>
-
-        <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="pillar-number">03</div>
-          <h3>Persönliche Betreuung &mdash; keine Kundin ist wie die andere</h3>
-          <p>Bei uns gibt es keine Standardbehandlungen. Wir hören zu, analysieren und passen jede Behandlung individuell an Ihre Haut, Ihren Körper und Ihre Wünsche an.</p>
-        </div>
-      </div>
-
-      <div class="pillars-bottom" data-aos="fade-up">
-        <p><span class="highlight">Seit 2015 aktiv.</span> Über 10 Jahre Erfahrung. Hunderte zufriedene Kundinnen in Koblenz.</p>
-        <p>Das Ergebnis: eine Verbindung aus Fachwissen, Qualität und menschlicher Wärme, die Sie bei jeder Behandlung spüren.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== EXPERIENCIA (PASSO A PASSO) ===================== -->
-  <section class="steps-section" id="ablauf">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">Ihr Besuch</span>
-        <h2 class="section-title">Ihr Besuch bei uns &mdash; von der Buchung bis zum Ergebnis</h2>
-      </div>
-
-      <div class="steps-timeline">
-        <div class="step-item" data-aos="fade-up" data-aos-delay="0">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>Terminbuchung</h3>
-            <p>Wählen Sie Ihre gewünschte Behandlung und buchen Sie Ihren Termin online oder per Telefon. Wir finden gemeinsam den besten Zeitpunkt für Sie.</p>
-          </div>
-        </div>
-
-        <div class="step-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>Persönliches Gespräch</h3>
-            <p>Vor jeder Behandlung nehmen wir uns Zeit für Sie. Wir besprechen Ihre Wünsche, analysieren Ihre Haut oder Ihren Körper und stimmen die Behandlung individuell ab.</p>
-          </div>
-        </div>
-
-        <div class="step-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>Ihre Behandlung</h3>
-            <p>In einer ruhigen, einladenden Atmosphäre führen wir die Behandlung mit höchster Sorgfalt durch. Sanfte Musik, angenehmes Licht und volle Aufmerksamkeit &mdash; damit Sie sich vollkommen entspannen können.</p>
-          </div>
-        </div>
-
-        <div class="step-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h3>Nachpflege und Empfehlungen</h3>
-            <p>Nach der Behandlung erhalten Sie professionelle Tipps und Pflegeempfehlungen, damit Ihre Ergebnisse länger anhalten und Ihre Haut optimal versorgt bleibt.</p>
-          </div>
-        </div>
-
-        <div class="step-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="step-number">05</div>
-          <div class="step-content">
-            <h3>Ihr neues Wohlgefühl</h3>
-            <p>Sie verlassen unser Studio mit einem Lächeln, frischer Haut und einem Gefühl von Leichtigkeit und Selbstvertrauen.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="steps-cta" data-aos="fade-up">
-        <a href="#termin" class="btn btn-primary">Jetzt Ihren Termin buchen</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== PARA QUEM E ===================== -->
-  <section class="for-you-section" id="fuer-dich">
-    <div class="container">
-      <div class="for-you-grid">
-        <div data-aos="fade-right">
-          <span class="section-label">Für Sie</span>
-          <h2 class="section-title">Reembeleza ist für Sie, wenn...</h2>
-          <ul class="for-you-list">
-            <li>Sie sich endlich Zeit für sich selbst nehmen möchten &mdash; ohne schlechtes Gewissen</li>
-            <li>Sie Ergebnisse suchen, die man sieht und spürt, nicht nur oberflächliche Behandlungen</li>
-            <li>Sie Wert auf natürliche, harmonische Ergebnisse legen &mdash; nichts Übertriebenes oder Künstliches</li>
-            <li>Sie eine Fachfrau möchten, die wirklich zuhört und auf Ihre individuellen Bedürfnisse eingeht</li>
-            <li>Sie mehr als einen Termin suchen &mdash; ein Erlebnis, das Körper und Seele guttut</li>
-            <li>Sie Qualität, Hygiene und Professionalität schätzen</li>
-            <li>Sie einen vertrauensvollen Ort suchen, an den Sie immer wieder gerne zurückkommen</li>
-          </ul>
-        </div>
-        <div class="for-you-image" data-aos="fade-left">
-          <img src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Schönheitspflege - Ihr Wohlbefinden" loading="lazy">
-        </div>
-      </div>
-      <p class="for-you-closing" data-aos="fade-up">Egal, ob Sie zum ersten Mal kommen oder schon lange nach dem richtigen Studio suchen &mdash; bei Reembeleza sind Sie willkommen.</p>
-    </div>
-  </section>
-
-  <!-- ===================== DEPOIMENTOS ===================== -->
-  <section class="testimonials-section" id="kundenstimmen">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">Kundenstimmen</span>
-        <h2 class="section-title">Was unsere Kundinnen sagen</h2>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="testimonial-quote">&ldquo;</div>
-          <p>Seit ich bei Renata bin, gehe ich nirgendwo anders mehr hin. Das Brazilian Waxing ist so präzise und gleichzeitig schonend &mdash; ich habe noch nie so glatte Haut gehabt. Und die Atmosphäre ist einfach wunderbar.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">C</div>
-            <div>
-              <div class="testimonial-name">Claudia M.</div>
-              <div class="testimonial-role">34, Unternehmerin aus Koblenz</div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Ich habe empfindliche Haut und hatte immer Probleme mit Waxing. Seit ich Sugaring bei Reembeleza mache, habe ich keine Hautirritationen mehr. Das Team nimmt sich wirklich Zeit und behandelt jede Kundin individuell.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Marta L., 29</div>
+                            <div class="testimonial-role">Grafikdesignerin</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-quote">&ldquo;</div>
-          <p>Die Lymphdrainage hat mir unglaublich gut getan. Ich fühlte mich danach so leicht und entspannt. Renata erklärt genau, was sie macht und warum. Man merkt die Erfahrung in jedem Handgriff.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">S</div>
-            <div>
-              <div class="testimonial-name">Sophie K.</div>
-              <div class="testimonial-role">41, Lehrerin</div>
+            <div class="testimonials-row-2">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Mein Wimperlifting sieht so nat&uuml;rlich aus &mdash; meine Kolleginnen fragen mich st&auml;ndig, was ich anders mache. Es spart mir jeden Morgen Zeit und ich f&uuml;hle mich einfach wohler.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div>
+                            <div class="testimonial-name">Anna B., 37</div>
+                            <div class="testimonial-role">Marketingmanagerin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Die Paarmassage war das sch&ouml;nste Geschenk, das wir uns gemacht haben. Absolut professionell, entspannend und liebevoll. Wir kommen definitiv wieder.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">J</div>
+                        <div>
+                            <div class="testimonial-name">Julia und Thomas R.</div>
+                            <div class="testimonial-role">Koblenz</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="testimonial-quote">&ldquo;</div>
-          <p>Ich habe empfindliche Haut und hatte immer Probleme mit Waxing. Seit ich Sugaring bei Reembeleza mache, habe ich keine Hautirritationen mehr. Das Team nimmt sich wirklich Zeit und behandelt jede Kundin individuell.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">M</div>
-            <div>
-              <div class="testimonial-name">Marta L.</div>
-              <div class="testimonial-role">29, Grafikdesignerin</div>
+            <p class="testimonials-disclaimer" data-aos="fade-up">Hinweis: Ergebnisse k&ouml;nnen individuell variieren.</p>
+        </div>
+    </section>
+
+    <!-- ======================== ABOUT ======================== -->
+    <section class="about-section" id="renata">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="imagens/renata.png" alt="Renata &mdash; Reembeleza">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <span class="section-label">Ihre Spezialistin</span>
+                    <h2 class="section-title" style="margin-bottom: 24px;">&Uuml;ber Renata &mdash; Ihre Spezialistin f&uuml;r Sch&ouml;nheit und Wohlbefinden</h2>
+                    <p>Ich bin Renata, Gr&uuml;nderin und Inhaberin von Reembeleza.</p>
+                    <p>Seit 2015 ausgebildete Kosmetikerin &mdash; mit einer Ausbildung, die in Brasilien begann und in Deutschland mit weiteren Qualifikationen vertieft wurde. &Uuml;ber 10 Jahre Erfahrung in der professionellen &Auml;sthetik. Zus&auml;tzlich kaufm&auml;nnisch ausgebildet und im Bereich Marketing weitergebildet.</p>
+
+                    <div class="about-qualifications">
+                        <h4>Meine Qualifikationen</h4>
+                        <ul>
+                            <li>Ausgebildete Kosmetikerin seit 2015</li>
+                            <li>Spezialisierung auf Brazilian Waxing, Sugaring und Lymphdrainage</li>
+                            <li>Fortlaufende Weiterbildung in modernen Behandlungstechniken</li>
+                            <li>Erfahrung in brasilianischen und deutschen Qualit&auml;tsstandards</li>
+                            <li>Arbeit ausschlie&szlig;lich mit hochwertigen, gepr&uuml;ften Produkten</li>
+                        </ul>
+                    </div>
+
+                    <p>Mein Ansatz ist klar: nicht &uuml;bertreiben, sondern die nat&uuml;rliche Sch&ouml;nheit gezielt hervorheben. Jede Behandlung f&uuml;hre ich mit voller Aufmerksamkeit, h&ouml;chster Hygiene und individueller Abstimmung durch.</p>
+                    <p class="about-closing">Ich freue mich auf Sie.</p>
+                    <br>
+                    <a href="#termin" class="btn btn-primary">Jetzt Termin bei Renata buchen</a>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="testimonial-quote">&ldquo;</div>
-          <p>Mein Wimperlifting sieht so natürlich aus &mdash; meine Kolleginnen fragen mich ständig, was ich anders mache. Es spart mir jeden Morgen Zeit und ich fühle mich einfach wohler.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">A</div>
-            <div>
-              <div class="testimonial-name">Anna B.</div>
-              <div class="testimonial-role">37, Marketingmanagerin</div>
+    <!-- ======================== FAQ ======================== -->
+    <section class="faq-section" id="faq">
+        <div class="container-narrow">
+            <div class="section-label-center" data-aos="fade-up">
+                <span class="section-label">FAQ</span>
             </div>
-          </div>
-        </div>
+            <h2 class="section-title" style="text-align:center;" data-aos="fade-up">H&auml;ufig gestellte Fragen</h2>
 
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-quote">&ldquo;</div>
-          <p>Die Paarmassage war das schönste Geschenk, das wir uns gemacht haben. Absolut professionell, entspannend und liebevoll. Wir kommen definitiv wieder.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">J</div>
-            <div>
-              <div class="testimonial-name">Julia &amp; Thomas R.</div>
-              <div class="testimonial-role">Koblenz</div>
+            <div class="faq-list" data-aos="fade-up">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Muss ich vor dem Brazilian Waxing etwas beachten?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Die Haare sollten mindestens 0,5 cm lang sein (ca. 2-3 Wochen nicht rasieren). Vermeiden Sie Sonnenbad oder Solarium am Tag der Behandlung. Bei Fragen beraten wir Sie gerne vorab.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Ist Sugaring wirklich weniger schmerzhaft als Waxing?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sugaring wird in Haarwuchsrichtung entfernt, was von den meisten Kundinnen als deutlich angenehmer empfunden wird. Besonders f&uuml;r empfindliche Haut und den Intimbereich ist Sugaring eine schonende Alternative.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Wie oft sollte ich zur Lymphdrainage kommen?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bereits eine Sitzung kann sp&uuml;rbare Leichtigkeit bringen. F&uuml;r nachhaltige Ergebnisse empfehlen wir je nach Bedarf regelm&auml;&szlig;ige Sitzungen. Wir erstellen gemeinsam einen individuellen Plan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Wie lange h&auml;lt ein Wimperlifting?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ein Wimperlifting h&auml;lt in der Regel 6 bis 8 Wochen, abh&auml;ngig von Ihrem nat&uuml;rlichen Wimpernwachstum. Keine Extensions, kein Kleber &mdash; nur Ihre eigenen Wimpern, perfekt geformt.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Ich habe sehr empfindliche Haut. K&ouml;nnt Ihr trotzdem behandeln?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolut. Wir arbeiten mit hochwertigen, hautvertr&auml;glichen Produkten und passen jede Behandlung an Ihren Hauttyp an. Empfindliche Haut ist bei uns in besten H&auml;nden.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Wie kann ich einen Termin buchen?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sie k&ouml;nnen Ihren Termin ganz einfach online &uuml;ber unsere Buchungsseite vereinbaren, uns per Telefon (<a href="tel:+4915167065729" style="color:var(--pink-dark)">+49 151 67065729</a>) oder per E-Mail (<a href="mailto:reembeleza@gmail.com" style="color:var(--pink-dark)">reembeleza@gmail.com</a>) kontaktieren.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Wo befindet sich das Studio?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Reembeleza liegt in Koblenz, G&ouml;bensiedlung 30B, 56077 Koblenz. Leicht erreichbar und mit einer ruhigen, einladenden Atmosph&auml;re.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Bietet Ihr auch Behandlungen f&uuml;r M&auml;nner an?</h3>
+                        <div class="faq-icon"><i data-lucide="plus" style="width:20px;height:20px;color:var(--grey-light)"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ja. Wir bieten professionelles M&auml;nnerwaxing f&uuml;r verschiedene K&ouml;rperbereiche an &mdash; diskret, gr&uuml;ndlich und professionell.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <p class="testimonials-disclaimer" data-aos="fade-up">Ergebnisse können individuell variieren.</p>
-    </div>
-  </section>
+    <!-- ======================== FINAL CTA ======================== -->
+    <section class="final-cta" id="termin">
+        <div class="container">
+            <div class="final-cta-content">
+                <div class="section-label-center">
+                    <span class="section-label" data-aos="fade-up">Bereit?</span>
+                </div>
+                <h2 class="section-title" data-aos="fade-up">Ihr Wohlbefinden beginnt mit einer Entscheidung</h2>
+                <p class="final-cta-text" data-aos="fade-up">Sie haben bis hierher gelesen &mdash; und das zeigt, dass Sie bereit sind, etwas f&uuml;r sich zu tun.</p>
+                <p class="final-cta-text" data-aos="fade-up">Sie verdienen mehr als oberfl&auml;chliche Behandlungen und unpers&ouml;nlichen Service. Sie verdienen einen Ort, an dem Ihre Sch&ouml;nheit, Ihre Haut und Ihr Wohlbefinden im Mittelpunkt stehen.</p>
+                <p class="final-cta-emphasis" data-aos="fade-up">Im Reembeleza erwartet Sie brasilianische Sch&ouml;nheitsexpertise, deutsche Qualit&auml;t und eine Fachfrau, die sich wirklich um Sie k&uuml;mmert.</p>
+                <p class="final-cta-text" data-aos="fade-up">Unsere Terminpl&auml;tze sind begrenzt, da wir jede Kundin individuell betreuen. Sichern Sie sich jetzt Ihren pers&ouml;nlichen Wohlf&uuml;hl-Termin.</p>
 
-  <!-- ===================== SOBRE / EXPERT ===================== -->
-  <section class="about-section" id="renata">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image" data-aos="fade-right">
-          <img src="imagens/renata.png" alt="Renata - Inhaberin Reembeleza Kosmetikstudio" loading="lazy">
+                <div class="final-cta-buttons" data-aos="fade-up">
+                    <a href="tel:+4915167065729" class="btn btn-pink">Jetzt Ihren Wohlf&uuml;hl-Termin vereinbaren</a>
+                    <a href="mailto:reembeleza@gmail.com" class="btn btn-outline-white">E-Mail schreiben</a>
+                </div>
+
+                <div class="final-cta-contact" data-aos="fade-up">
+                    <p>Lieber pers&ouml;nlich? Rufen Sie uns an: <a href="tel:+4915167065729">+49 151 67065729</a></p>
+                    <p>Oder schreiben Sie uns: <a href="mailto:reembeleza@gmail.com">reembeleza@gmail.com</a></p>
+                </div>
+            </div>
         </div>
-        <div class="about-text" data-aos="fade-left">
-          <span class="section-label">Ihre Spezialistin</span>
-          <h2 class="section-title">Über Renata &mdash; Ihre Spezialistin für Schönheit und Wohlbefinden</h2>
-          <p>Ich bin Renata, Gründerin und Inhaberin von Reembeleza.</p>
-          <p>Seit 2015 ausgebildete Kosmetikerin &mdash; mit einer Ausbildung, die in Brasilien begann und in Deutschland mit weiteren Qualifikationen vertieft wurde. Über 10 Jahre Erfahrung in der professionellen Ästhetik. Zusätzlich kaufmännisch ausgebildet und im Bereich Marketing weitergebildet.</p>
+    </section>
 
-          <div class="about-qualifications">
-            <h4>Qualifikationen</h4>
-            <ul>
-              <li>Ausgebildete Kosmetikerin seit 2015</li>
-              <li>Spezialisierung auf Brazilian Waxing, Sugaring und Lymphdrainage</li>
-              <li>Fortlaufende Weiterbildung in modernen Behandlungstechniken</li>
-              <li>Erfahrung in brasilianischen und deutschen Qualitätsstandards</li>
-              <li>Arbeit ausschließlich mit hochwertigen, geprüften Produkten</li>
-            </ul>
-          </div>
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Reembeleza</div>
+                    <p class="footer-desc">Brasilianische Sch&ouml;nheitspflege und deutsche Pr&auml;zision &mdash; vereint in einem Kosmetikstudio mitten in Koblenz. Ihr Ort f&uuml;r Wohlbefinden, professionelle Hautpflege und individuelle Behandlungen.</p>
+                </div>
+                <div>
+                    <h4>Behandlungen</h4>
+                    <ul class="footer-links">
+                        <li><a href="#behandlungen">Brazilian Waxing</a></li>
+                        <li><a href="#behandlungen">Sugaring</a></li>
+                        <li><a href="#behandlungen">Lymphdrainage</a></li>
+                        <li><a href="#behandlungen">Wimperlifting</a></li>
+                        <li><a href="#behandlungen">Massagen</a></li>
+                        <li><a href="#behandlungen">Hautpflege</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <div class="footer-contact-item">
+                        <i data-lucide="map-pin"></i>
+                        <span>G&ouml;bensiedlung 30B, 56077 Koblenz</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i data-lucide="phone"></i>
+                        <a href="tel:+4915167065729">+49 151 67065729</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i data-lucide="mail"></i>
+                        <span><a href="mailto:reembeleza@gmail.com">reembeleza@gmail.com</a> | <a href="mailto:re@reembeleza.de">re@reembeleza.de</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i data-lucide="instagram"></i>
+                        <a href="https://instagram.com/reembelezakosmetikstudio" target="_blank" rel="noopener">@reembelezakosmetikstudio</a>
+                    </div>
+                    <div class="footer-contact-item" style="margin-top:8px;">
+                        <i data-lucide="calendar"></i>
+                        <span>Termine auf Anfrage erh&auml;ltlich.</span>
+                    </div>
+                </div>
+            </div>
 
-          <p>Mein Ansatz ist klar: nicht übertreiben, sondern die natürliche Schönheit gezielt hervorheben. Jede Behandlung führe ich mit voller Aufmerksamkeit, höchster Hygiene und individueller Abstimmung durch.</p>
-
-          <p class="about-closing">Ich freue mich auf Sie.</p>
-
-          <div style="margin-top: 32px;">
-            <a href="#termin" class="btn btn-primary">Termin bei Renata buchen</a>
-          </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Reembeleza Kosmetikstudio. Alle Rechte vorbehalten.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- ===================== FAQ ===================== -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">FAQ</span>
-        <h2 class="section-title">Häufig gestellte Fragen</h2>
-      </div>
+    <!-- ======================== SCROLL TO TOP ======================== -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i data-lucide="arrow-up" style="width:22px;height:22px;"></i>
+    </button>
 
-      <div class="faq-list">
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Muss ich vor dem Brazilian Waxing etwas beachten?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Die Haare sollten mindestens 0,5 cm lang sein (ca. 2-3 Wochen nicht rasieren). Vermeiden Sie Sonnenbad oder Solarium am Tag der Behandlung. Bei Fragen beraten wir Sie gerne vorab.</p>
-          </div>
-        </div>
+    <!-- ======================== WHATSAPP FLOAT ======================== -->
+    <a href="https://wa.me/4915167065729" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Ist Sugaring wirklich weniger schmerzhaft als Waxing?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Sugaring wird in Haarwuchsrichtung entfernt, was von den meisten Kundinnen als deutlich angenehmer empfunden wird. Besonders für empfindliche Haut und den Intimbereich ist Sugaring eine schonende Alternative.</p>
-          </div>
-        </div>
+    <!-- ======================== SCRIPTS ======================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // AOS Init
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80
+        });
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Wie oft sollte ich zur Lymphdrainage kommen?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Bereits eine Sitzung kann spürbare Leichtigkeit bringen. Für nachhaltige Ergebnisse empfehlen wir je nach Bedarf regelmäßige Sitzungen. Wir erstellen gemeinsam einen individuellen Plan.</p>
-          </div>
-        </div>
+        // Lucide Icons
+        lucide.createIcons();
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Wie lange hält ein Wimperlifting?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Ein Wimperlifting hält in der Regel 6 bis 8 Wochen, abhängig von Ihrem natürlichen Wimpernwachstum. Keine Extensions, kein Kleber &mdash; nur Ihre eigenen Wimpern, perfekt geformt.</p>
-          </div>
-        </div>
+        // Navbar scroll toggle
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Ich habe sehr empfindliche Haut. Könnt Ihr trotzdem behandeln?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Absolut. Wir arbeiten mit hochwertigen, hautverträglichen Produkten und passen jede Behandlung an Ihren Hauttyp an. Empfindliche Haut ist bei uns in besten Händen.</p>
-          </div>
-        </div>
+        // Scroll to top visibility
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Wie kann ich einen Termin buchen?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Sie können Ihren Termin ganz einfach online über unsere Buchungsseite vereinbaren, uns per Telefon (+49 151 67065729) oder per E-Mail (reembeleza@gmail.com) kontaktieren.</p>
-          </div>
-        </div>
+        // FAQ Toggle
+        function toggleFaq(el) {
+            const item = el.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Wo befindet sich das Studio?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Reembeleza liegt in Koblenz, Göbensiedlung 30B, 56077 Koblenz. Leicht erreichbar und mit einer ruhigen, einladenden Atmosphäre.</p>
-          </div>
-        </div>
+            allItems.forEach(function(faqItem) {
+                if (faqItem !== item) {
+                    faqItem.classList.remove('active');
+                }
+            });
 
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Bietet Ihr auch Behandlungen für Männer an?</h3>
-            <div class="faq-toggle"><span>+</span></div>
-          </div>
-          <div class="faq-answer">
-            <p>Ja. Wir bieten professionelles Männerwaxing für verschiedene Körperbereiche an &mdash; diskret, gründlich und professionell.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ULTIMA CHAMADA ===================== -->
-  <section class="final-cta-section" id="termin">
-    <div class="container">
-      <div class="final-cta-content" data-aos="fade-up">
-        <span class="section-label">Bereit?</span>
-        <h2 class="section-title">Ihr Wohlbefinden beginnt mit einer Entscheidung</h2>
-        <p>Sie haben bis hierher gelesen &mdash; und das zeigt, dass Sie bereit sind, etwas für sich zu tun.</p>
-        <p>Sie verdienen mehr als oberflächliche Behandlungen und unpersönlichen Service. Sie verdienen einen Ort, an dem Ihre Schönheit, Ihre Haut und Ihr Wohlbefinden im Mittelpunkt stehen.</p>
-        <p class="emphasis">Im Reembeleza erwartet Sie brasilianische Schönheitsexpertise, deutsche Qualität und eine Fachfrau, die sich wirklich um Sie kümmert.</p>
-        <p>Unsere Terminplätze sind begrenzt, da wir jede Kundin individuell betreuen. Sichern Sie sich jetzt Ihren persönlichen Wohlfühl-Termin.</p>
-        <div class="final-cta-buttons">
-          <a href="tel:+4915167065729" class="btn btn-pink">Jetzt Ihren Wohlfühl-Termin vereinbaren</a>
-          <a href="mailto:reembeleza@gmail.com" class="btn btn-outline" style="color: var(--white); border-color: rgba(255,255,255,0.3);">E-Mail schreiben</a>
-        </div>
-        <div class="final-cta-contact">
-          <p>Lieber persönlich? Rufen Sie uns an: <a href="tel:+4915167065729">+49 151 67065729</a></p>
-          <p>Oder schreiben Sie uns: <a href="mailto:reembeleza@gmail.com">reembeleza@gmail.com</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">Reembeleza</div>
-          <p class="footer-desc">Brasilianische Schönheitspflege mit deutscher Präzision. Ihr Kosmetikstudio in Koblenz für professionelle Hautpflege, Waxing, Massagen und Wohlbefinden.</p>
-        </div>
-        <div>
-          <h4>Behandlungen</h4>
-          <ul class="footer-links">
-            <li><a href="#behandlungen">Brazilian Waxing</a></li>
-            <li><a href="#behandlungen">Sugaring</a></li>
-            <li><a href="#behandlungen">Lymphdrainage</a></li>
-            <li><a href="#behandlungen">Wimperlifting</a></li>
-            <li><a href="#behandlungen">Massagen</a></li>
-            <li><a href="#behandlungen">Hautpflege</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <div class="footer-contact-item">
-            <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
-            <span>Göbensiedlung 30B, 56077 Koblenz</span>
-          </div>
-          <div class="footer-contact-item">
-            <i data-lucide="phone" style="width:16px;height:16px;"></i>
-            <a href="tel:+4915167065729">+49 151 67065729</a>
-          </div>
-          <div class="footer-contact-item">
-            <i data-lucide="mail" style="width:16px;height:16px;"></i>
-            <span><a href="mailto:reembeleza@gmail.com">reembeleza@gmail.com</a> | <a href="mailto:re@reembeleza.de">re@reembeleza.de</a></span>
-          </div>
-          <div class="footer-contact-item">
-            <i data-lucide="instagram" style="width:16px;height:16px;"></i>
-            <a href="https://instagram.com/reembelezakosmetikstudio" target="_blank" rel="noopener">@reembelezakosmetikstudio</a>
-          </div>
-          <p style="font-size: 0.85rem; margin-top: 16px; color: rgba(255,255,255,0.35);">Termine auf Anfrage erhältlich.</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Reembeleza Kosmetikstudio. Alle Rechte vorbehalten.</span>
-        <div class="footer-legal">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ===================== SCROLL TO TOP ===================== -->
-  <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <i data-lucide="arrow-up" style="width:20px;height:20px;"></i>
-  </div>
-
-  <!-- ===================== WHATSAPP FLOAT ===================== -->
-  <a href="https://wa.me/4915167065729" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <!-- ===================== SCRIPTS ===================== -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Init AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 80,
-    });
-
-    // Init Lucide icons
-    lucide.createIcons();
-
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Scroll to top button
-    const scrollTopBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
-    });
-
-    // FAQ toggle
-    function toggleFaq(el) {
-      const item = el.parentElement;
-      const isActive = item.classList.contains('active');
-
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-      // Open clicked if not already active
-      if (!isActive) item.classList.add('active');
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
+            item.classList.toggle('active');
         }
-      });
-    });
-  </script>
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: top,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
