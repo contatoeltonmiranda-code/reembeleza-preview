@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reembeleza Kosmetikstudio | Koblenz</title>
-  <meta name="description" content="Brasilianische Schoenheitspflege mit deutscher Praezision. Brazilian Waxing, Sugaring, Lymphdrainage, Massagen und mehr in Koblenz.">
+  <meta name="description" content="Brasilianische Schönheitspflege mit deutscher Präzision. Brazilian Waxing, Sugaring, Lymphdrainage, Massagen und mehr in Koblenz.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,15 +200,21 @@
     }
 
     .navbar-brand {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
       transition: var(--transition);
     }
 
-    .navbar.scrolled .navbar-brand { color: var(--black); }
+    .navbar-brand img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled .navbar-brand img {
+      filter: brightness(0);
+    }
 
     .navbar-cta {
       font-size: 0.7rem;
@@ -1483,7 +1489,7 @@
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="navbar-brand">Reembeleza</a>
+      <a href="#" class="navbar-brand"><img src="imagens/reembelza-weiss.svg" alt="Reembeleza"></a>
       <a href="#termin" class="navbar-cta">Termin vereinbaren</a>
     </div>
   </nav>
@@ -1492,8 +1498,8 @@
   <section class="hero" id="hero">
     <div class="hero-content">
       <p class="hero-label">Kosmetikstudio in Koblenz</p>
-      <h1 class="hero-title">Wann hast Du Dich das letzte Mal wirklich <em>schoen</em> gefuehlt?</h1>
-      <p class="hero-subtitle">Brasilianische Schoenheitspflege. Deutsche Praezision. Dein neues Wohlgefuehl. Entdecke im Reembeleza Kosmetikstudio in Koblenz, wie sich professionelle Hautpflege, Brazilian Waxing und koerperliches Wohlbefinden anfuehlen &mdash; mit Technik, Hingabe und einem Ergebnis, das Du spuerst.</p>
+      <h1 class="hero-title">Wann hast Du Dich das letzte Mal wirklich <em>schön</em> gefühlt?</h1>
+      <p class="hero-subtitle">Brasilianische Schönheitspflege. Deutsche Präzision. Dein neues Wohlgefühl. Entdecke im Reembeleza Kosmetikstudio in Koblenz, wie sich professionelle Hautpflege, Brazilian Waxing und körperliches Wohlbefinden anfühlen &mdash; mit Technik, Hingabe und einem Ergebnis, das Du spürst.</p>
       <div class="hero-cta">
         <a href="#termin" class="btn btn-pink">Jetzt Termin vereinbaren</a>
       </div>
@@ -1510,12 +1516,12 @@
       <div class="pain-content">
         <span class="section-label" data-aos="fade-up">Kennst Du das?</span>
         <div data-aos="fade-up" data-aos-delay="100">
-          <p>Du gibst jeden Tag alles &mdash; fuer die Arbeit, die Familie, den Alltag. Aber wann hast Du Dir das letzte Mal wirklich Zeit fuer Dich selbst genommen?</p>
-          <p>Vielleicht hast Du schon Behandlungen ausprobiert, die oberflaechlich waren. Ergebnisse, die nach wenigen Tagen verschwunden sind. Termine, bei denen Du Dich wie eine Nummer gefuehlt hast.</p>
-          <p>Und mit der Zeit wird es schwerer. Der Blick in den Spiegel fuehlt sich nicht mehr so an wie frueher. Die eigene Haut, der eigene Koerper &mdash; irgendwann verliert man das Gefuehl fuer sich selbst.</p>
+          <p>Du gibst jeden Tag alles &mdash; für die Arbeit, die Familie, den Alltag. Aber wann hast Du Dir das letzte Mal wirklich Zeit für Dich selbst genommen?</p>
+          <p>Vielleicht hast Du schon Behandlungen ausprobiert, die oberflächlich waren. Ergebnisse, die nach wenigen Tagen verschwunden sind. Termine, bei denen Du Dich wie eine Nummer gefühlt hast.</p>
+          <p>Und mit der Zeit wird es schwerer. Der Blick in den Spiegel fühlt sich nicht mehr so an wie früher. Die eigene Haut, der eigene Körper &mdash; irgendwann verliert man das Gefühl für sich selbst.</p>
           <p>Aber das muss nicht so bleiben.</p>
-          <p>Du wuenschst Dir Ergebnisse, die man sieht und spuert. Pflege, die auf Dich persoenlich abgestimmt ist. Einen Ort, an dem Du Dich wirklich entspannen und loslassen kannst.</p>
-          <p class="pain-highlight">Und genau dafuer gibt es Reembeleza.</p>
+          <p>Du wünschst Dir Ergebnisse, die man sieht und spürt. Pflege, die auf Dich persönlich abgestimmt ist. Einen Ort, an dem Du Dich wirklich entspannen und loslassen kannst.</p>
+          <p class="pain-highlight">Und genau dafür gibt es Reembeleza.</p>
         </div>
       </div>
     </div>
@@ -1526,15 +1532,15 @@
     <div class="container">
       <div class="story-grid">
         <div class="story-image" data-aos="fade-right">
-          <img src="https://images.pexels.com/photos/3764013/pexels-photo-3764013.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Reembeleza - Schoenheitspflege und Wohlbefinden" loading="lazy">
+          <img src="https://images.pexels.com/photos/3764013/pexels-photo-3764013.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Reembeleza - Schönheitspflege und Wohlbefinden" loading="lazy">
         </div>
         <div class="story-text" data-aos="fade-left">
           <span class="section-label">Warum Reembeleza?</span>
           <h2 class="section-title">Das Beste aus zwei Welten</h2>
-          <p>Brasilien ist weltweit bekannt fuer seine Expertise in Aesthetik, Hautpflege und Koerperbewusstsein. Deutschland steht fuer Praezision, Qualitaet und hoechste Ansprueche.</p>
+          <p>Brasilien ist weltweit bekannt für seine Expertise in Ästhetik, Hautpflege und Körperbewusstsein. Deutschland steht für Präzision, Qualität und höchste Ansprüche.</p>
           <p>Reembeleza vereint das Beste aus beiden Welten &mdash; in einem Studio mitten in Koblenz.</p>
-          <p>Hier geht es nicht um schnelle Termine oder Standardbehandlungen. Hier geht es darum, jede Kundin als das zu sehen, was sie ist: einzigartig. Mit individuellen Beduerfnissen, die individuelle Pflege verdienen.</p>
-          <p>Kein Massenangebot. Keine Kompromisse. Sondern Schoenheitspflege mit Herz, Technik und einem klaren Anspruch: dass Du Dich nach jeder Behandlung schoener, leichter und selbstbewusster fuehlst.</p>
+          <p>Hier geht es nicht um schnelle Termine oder Standardbehandlungen. Hier geht es darum, jede Kundin als das zu sehen, was sie ist: einzigartig. Mit individuellen Bedürfnissen, die individuelle Pflege verdienen.</p>
+          <p>Kein Massenangebot. Keine Kompromisse. Sondern Schönheitspflege mit Herz, Technik und einem klaren Anspruch: dass Du Dich nach jeder Behandlung schöner, leichter und selbstbewusster fühlst.</p>
           <div class="story-stats">
             <div class="stat-item">
               <div class="stat-number">10+</div>
@@ -1559,8 +1565,8 @@
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-label">Behandlungen</span>
-        <h2 class="section-title">Unsere Behandlungen &mdash; fuer Dein Wohlbefinden von Kopf bis Fuss</h2>
-        <p class="section-subtitle">Jede Behandlung im Reembeleza wird individuell auf Dich abgestimmt. Hier verbinden sich Technik, Sorgfalt und Erfahrung zu einem Erlebnis, das ueber das Sichtbare hinausgeht.</p>
+        <h2 class="section-title">Unsere Behandlungen &mdash; für Dein Wohlbefinden von Kopf bis Fuss</h2>
+        <p class="section-subtitle">Jede Behandlung im Reembeleza wird individuell auf Dich abgestimmt. Hier verbinden sich Technik, Sorgfalt und Erfahrung zu einem Erlebnis, das über das Sichtbare hinausgeht.</p>
       </div>
 
       <!-- Service Cards Grid (overview) -->
@@ -1568,9 +1574,9 @@
         <div class="service-card" data-aos="fade-up" data-aos-delay="0">
           <div class="service-icon"><i data-lucide="sparkles" style="width:24px;height:24px;"></i></div>
           <h3>Brazilian Waxing</h3>
-          <p>Glatte Haut mit brasilianischer Praezision. Langanhaltende Ergebnisse und schonende Technik.</p>
+          <p>Glatte Haut mit brasilianischer Präzision. Langanhaltende Ergebnisse und schonende Technik.</p>
           <ul class="service-features">
-            <li>Praezise Haarentfernung ab der Wurzel</li>
+            <li>Präzise Haarentfernung ab der Wurzel</li>
             <li>Langanhaltend glatte Haut</li>
             <li>Schonende Nachpflege</li>
           </ul>
@@ -1580,11 +1586,11 @@
         <div class="service-card" data-aos="fade-up" data-aos-delay="100">
           <div class="service-icon"><i data-lucide="droplets" style="width:24px;height:24px;"></i></div>
           <h3>Sugaring</h3>
-          <p>Sanfte Haarentfernung mit natuerlicher Zuckerpaste. Besonders schonend fuer empfindliche Haut.</p>
+          <p>Sanfte Haarentfernung mit natürlicher Zuckerpaste. Besonders schonend für empfindliche Haut.</p>
           <ul class="service-features">
-            <li>100% natuerliche Inhaltsstoffe</li>
+            <li>100% natürliche Inhaltsstoffe</li>
             <li>Weniger Schmerz, weniger Irritation</li>
-            <li>Ideal fuer sensible Haut</li>
+            <li>Ideal für sensible Haut</li>
           </ul>
           <a href="#termin" class="btn btn-outline">Termin buchen</a>
         </div>
@@ -1592,10 +1598,10 @@
         <div class="service-card" data-aos="fade-up" data-aos-delay="200">
           <div class="service-icon"><i data-lucide="waves" style="width:24px;height:24px;"></i></div>
           <h3>Lymphdrainage</h3>
-          <p>Leichtigkeit, die Du sofort spuerst. Gezielte Stimulation fuer Vitalitaet und Wohlbefinden.</p>
+          <p>Leichtigkeit, die Du sofort spürst. Gezielte Stimulation für Vitalität und Wohlbefinden.</p>
           <ul class="service-features">
             <li>Reduktion von Schwellungen</li>
-            <li>Spuerbare Leichtigkeit</li>
+            <li>Spürbare Leichtigkeit</li>
             <li>Therapeutischer Effekt</li>
           </ul>
           <a href="#termin" class="btn btn-outline">Termin buchen</a>
@@ -1604,9 +1610,9 @@
         <div class="service-card" data-aos="fade-up" data-aos-delay="0">
           <div class="service-icon"><i data-lucide="eye" style="width:24px;height:24px;"></i></div>
           <h3>Wimperlifting</h3>
-          <p>Dein natuerlicher Augenaufschlag, perfekt in Szene gesetzt. Ohne kuenstliche Wimpern.</p>
+          <p>Dein natürlicher Augenaufschlag, perfekt in Szene gesetzt. Ohne künstliche Wimpern.</p>
           <ul class="service-features">
-            <li>Natuerlich geschwungene Wimpern</li>
+            <li>Natürlich geschwungene Wimpern</li>
             <li>Haltbarkeit 6-8 Wochen</li>
             <li>Individuelle Anpassung</li>
           </ul>
@@ -1631,7 +1637,7 @@
           <p>Deine Haut verdient mehr als Routine. Individuelle Analyse und professionelle Behandlung.</p>
           <ul class="service-features">
             <li>Professionelle Hautreinigung</li>
-            <li>Microneedling mit Hyaluronsaeure</li>
+            <li>Microneedling mit Hyaluronsäure</li>
             <li>Augenbrauenformung</li>
           </ul>
           <a href="#termin" class="btn btn-outline">Termin buchen</a>
@@ -1647,18 +1653,18 @@
             <img src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Brazilian Waxing - Professionelle Behandlung" loading="lazy">
           </div>
           <div class="service-detail-text">
-            <h3>Brazilian Waxing &mdash; Glatte Haut mit brasilianischer Praezision</h3>
-            <p>Die brasilianische Waxing-Technik ist weltweit fuer ihre Gruendlichkeit, Praezision und langanhaltenden Ergebnisse bekannt.</p>
-            <p>Im Reembeleza achten wir auf jedes Detail: die richtige Temperatur des Wachses, die optimale Anwendungstechnik und eine sorgfaeltige Nachbehandlung der Haut.</p>
+            <h3>Brazilian Waxing &mdash; Glatte Haut mit brasilianischer Präzision</h3>
+            <p>Die brasilianische Waxing-Technik ist weltweit für ihre Gründlichkeit, Präzision und langanhaltenden Ergebnisse bekannt.</p>
+            <p>Im Reembeleza achten wir auf jedes Detail: die richtige Temperatur des Wachses, die optimale Anwendungstechnik und eine sorgfältige Nachbehandlung der Haut.</p>
             <h4>Was Dich erwartet:</h4>
             <ul class="service-detail-features">
-              <li>Praezise Haarentfernung ab der Wurzel</li>
+              <li>Präzise Haarentfernung ab der Wurzel</li>
               <li>Langanhaltend glatte Haut &mdash; mehrere Wochen lang</li>
               <li>Schonende Technik, die Hautirritationen reduziert</li>
-              <li>Sorgfaeltige Nachpflege fuer ein samtiges Hautgefuehl</li>
-              <li>Ausfuehrliche Beratung fuer Deine individuellen Beduerfnisse</li>
+              <li>Sorgfältige Nachpflege für ein samtiges Hautgefühl</li>
+              <li>Ausführliche Beratung für Deine individuellen Bedürfnisse</li>
             </ul>
-            <p class="service-detail-result">Das Ergebnis: seidig glatte Haut, ein frisches Koerpergefuehl und ein Selbstbewusstsein, das wochenlang anhaelt.</p>
+            <p class="service-detail-result">Das Ergebnis: seidig glatte Haut, ein frisches Körpergefühl und ein Selbstbewusstsein, das wochenlang anhält.</p>
             <div class="service-detail-cta">
               <a href="#termin" class="btn btn-primary">Brazilian Waxing buchen</a>
             </div>
@@ -1670,21 +1676,21 @@
       <div class="service-detail" data-aos="fade-up">
         <div class="service-detail-grid">
           <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Sugaring - Natuerliche Inhaltsstoffe" loading="lazy">
+            <img src="https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Sugaring - Natürliche Inhaltsstoffe" loading="lazy">
           </div>
           <div class="service-detail-text">
-            <h3>Sugaring &mdash; Sanfte Haarentfernung mit natuerlicher Zuckerpaste</h3>
-            <p>Sugaring ist die natuerliche Alternative zum klassischen Waxing &mdash; besonders schonend fuer empfindliche Haut.</p>
-            <p>Die Zuckerpaste wird in Haarwuchsrichtung entfernt. Das reduziert Schmerzen, minimiert Hautreizungen und ist ideal fuer sensible Hauttypen.</p>
+            <h3>Sugaring &mdash; Sanfte Haarentfernung mit natürlicher Zuckerpaste</h3>
+            <p>Sugaring ist die natürliche Alternative zum klassischen Waxing &mdash; besonders schonend für empfindliche Haut.</p>
+            <p>Die Zuckerpaste wird in Haarwuchsrichtung entfernt. Das reduziert Schmerzen, minimiert Hautreizungen und ist ideal für sensible Hauttypen.</p>
             <h4>Was Dich erwartet:</h4>
             <ul class="service-detail-features">
-              <li>100% natuerliche Inhaltsstoffe (Zucker, Zitrone, Wasser)</li>
-              <li>Besonders sanft fuer empfindliche Haut und Intimbereich</li>
+              <li>100% natürliche Inhaltsstoffe (Zucker, Zitrone, Wasser)</li>
+              <li>Besonders sanft für empfindliche Haut und Intimbereich</li>
               <li>Haarentfernung in Wuchsrichtung &mdash; weniger Schmerz, weniger eingewachsene Haare</li>
               <li>Langanhaltende Ergebnisse wie beim Waxing</li>
-              <li>Geeignet auch fuer Allergikerinnen</li>
+              <li>Geeignet auch für Allergikerinnen</li>
             </ul>
-            <p class="service-detail-result">Perfekt fuer alle, die natuerliche Pflege und sanfte Behandlung bevorzugen.</p>
+            <p class="service-detail-result">Perfekt für alle, die natürliche Pflege und sanfte Behandlung bevorzugen.</p>
             <div class="service-detail-cta">
               <a href="#termin" class="btn btn-primary">Sugaring buchen</a>
             </div>
@@ -1699,18 +1705,18 @@
             <img src="https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Lymphdrainage - Entspannung und Leichtigkeit" loading="lazy">
           </div>
           <div class="service-detail-text">
-            <h3>Lymphdrainage &mdash; Leichtigkeit, die Du sofort spuerst</h3>
-            <p>Lymphdrainage ist weit mehr als eine entspannende Massage. Es ist eine gezielte, rhythmische Technik, die Dein Lymphsystem aktiviert, Fluessigkeitsansammlungen reduziert und den Koerper von innen revitalisiert.</p>
-            <p>Im Reembeleza fuehren wir die Lymphdrainage mit therapeutischer Praezision durch &mdash; strategisch, sanft und wirkungsvoll.</p>
+            <h3>Lymphdrainage &mdash; Leichtigkeit, die Du sofort spürst</h3>
+            <p>Lymphdrainage ist weit mehr als eine entspannende Massage. Es ist eine gezielte, rhythmische Technik, die Dein Lymphsystem aktiviert, Flüssigkeitsansammlungen reduziert und den Körper von innen revitalisiert.</p>
+            <p>Im Reembeleza führen wir die Lymphdrainage mit therapeutischer Präzision durch &mdash; strategisch, sanft und wirkungsvoll.</p>
             <h4>Was Dich erwartet:</h4>
             <ul class="service-detail-features">
               <li>Gezielte Stimulation der Lymphknoten und Lymphbahnen</li>
               <li>Sichtbare Reduktion von Schwellungen und Wassereinlagerungen</li>
-              <li>Spuerbare Leichtigkeit und Vitalitaet bereits nach der ersten Sitzung</li>
-              <li>Verbesserung der Hautstruktur und des Koerperkonturs</li>
+              <li>Spürbare Leichtigkeit und Vitalität bereits nach der ersten Sitzung</li>
+              <li>Verbesserung der Hautstruktur und des Körperkonturs</li>
               <li>Tiefe Entspannung mit therapeutischem Effekt</li>
             </ul>
-            <p class="service-detail-result">Viele Kundinnen berichten schon nach der ersten Sitzung von einem sichtbar entschwaemmten Koerper und einem voellig neuen Koerpergefuehl.</p>
+            <p class="service-detail-result">Viele Kundinnen berichten schon nach der ersten Sitzung von einem sichtbar entschwämmten Körper und einem völlig neuen Körpergefühl.</p>
             <div class="service-detail-cta">
               <a href="#termin" class="btn btn-primary">Lymphdrainage buchen</a>
             </div>
@@ -1722,20 +1728,20 @@
       <div class="service-detail" data-aos="fade-up">
         <div class="service-detail-grid">
           <div class="service-detail-image">
-            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop&q=80" alt="Wimperlifting - Natuerlicher Augenaufschlag" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop&q=80" alt="Wimperlifting - Natürlicher Augenaufschlag" loading="lazy">
           </div>
           <div class="service-detail-text">
-            <h3>Wimperlifting &mdash; Dein natuerlicher Augenaufschlag, perfekt in Szene gesetzt</h3>
-            <p>Wimperlifting hebt Deine natuerlichen Wimpern sanft an und verleiht Deinem Blick mehr Ausdruck &mdash; ganz ohne kuenstliche Wimpern oder taegliches Schminken.</p>
+            <h3>Wimperlifting &mdash; Dein natürlicher Augenaufschlag, perfekt in Szene gesetzt</h3>
+            <p>Wimperlifting hebt Deine natürlichen Wimpern sanft an und verleiht Deinem Blick mehr Ausdruck &mdash; ganz ohne künstliche Wimpern oder tägliches Schminken.</p>
             <h4>Was Dich erwartet:</h4>
             <ul class="service-detail-features">
-              <li>Natuerlich geschwungene, voller wirkende Wimpern</li>
+              <li>Natürlich geschwungene, voller wirkende Wimpern</li>
               <li>Haltbarkeit von 6 bis 8 Wochen</li>
               <li>Kein Wimpernkleber, keine Extensions &mdash; nur Deine eigenen Wimpern, perfekt geformt</li>
               <li>Zeitsparend im Alltag: aufwachen und direkt strahlen</li>
-              <li>Individuelle Anpassung an Deine Augenform und Wimpernlaenge</li>
+              <li>Individuelle Anpassung an Deine Augenform und Wimpernlänge</li>
             </ul>
-            <p class="service-detail-result">Ideal fuer Frauen, die einen ausdruecksvollen Blick moechten &mdash; natuerlich, elegant und ohne taeglichen Aufwand.</p>
+            <p class="service-detail-result">Ideal für Frauen, die einen ausdrucksvollen Blick möchten &mdash; natürlich, elegant und ohne täglichen Aufwand.</p>
             <div class="service-detail-cta">
               <a href="#termin" class="btn btn-primary">Wimperlifting buchen</a>
             </div>
@@ -1751,19 +1757,19 @@
           </div>
           <div class="service-detail-text">
             <h3>Massagen &mdash; Dein Moment der Ruhe und Regeneration</h3>
-            <p>Im Reembeleza bieten wir ein breites Spektrum an Massagetechniken &mdash; von tiefer Entspannung bis hin zu therapeutischer Wirkung. Jede Massage wird auf Deine individuellen Beduerfnisse abgestimmt.</p>
+            <p>Im Reembeleza bieten wir ein breites Spektrum an Massagetechniken &mdash; von tiefer Entspannung bis hin zu therapeutischer Wirkung. Jede Massage wird auf Deine individuellen Bedürfnisse abgestimmt.</p>
             <h4>Unser Angebot:</h4>
             <ul class="service-detail-features">
-              <li>Entspannende Ganzkoerpermassage (60 oder 90 Min.)</li>
-              <li>Hot Stone Massage &mdash; Waerme, die tief in die Muskulatur eindringt</li>
-              <li>Aromatherapie-Massage &mdash; aetherische Oele fuer Koerper und Geist</li>
+              <li>Entspannende Ganzkörpermassage (60 oder 90 Min.)</li>
+              <li>Hot Stone Massage &mdash; Wärme, die tief in die Muskulatur eindringt</li>
+              <li>Aromatherapie-Massage &mdash; ätherische Öle für Körper und Geist</li>
               <li>Anti-Stress / Lomi Lomi &mdash; hawaiianische Technik gegen Verspannungen</li>
-              <li>Shiatsu &mdash; japanische Druckpunkttechnik fuer energetischen Ausgleich</li>
+              <li>Shiatsu &mdash; japanische Druckpunkttechnik für energetischen Ausgleich</li>
               <li>Sportmassage &mdash; Regeneration und Leistungssteigerung</li>
-              <li>Fussreflexzonenmassage &mdash; ueber die Fuesse den ganzen Koerper ansprechen</li>
+              <li>Fußreflexzonenmassage &mdash; über die Füße den ganzen Körper ansprechen</li>
               <li>Paarmassage &mdash; gemeinsame Entspannung zu zweit</li>
             </ul>
-            <p class="service-detail-result">Ob Alltagsstress, koerperliche Verspannungen oder einfach eine Auszeit &mdash; hier findest Du genau das, was Dein Koerper braucht.</p>
+            <p class="service-detail-result">Ob Alltagsstress, körperliche Verspannungen oder einfach eine Auszeit &mdash; hier findest Du genau das, was Dein Körper braucht.</p>
             <div class="service-detail-cta">
               <a href="#termin" class="btn btn-primary">Massage buchen</a>
             </div>
@@ -1775,27 +1781,27 @@
       <div class="service-detail" data-aos="fade-up">
         <div class="service-detail-grid">
           <div class="service-detail-image">
-            <img src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Manikuere - Gepflegte Naegel" loading="lazy">
+            <img src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Maniküre - Gepflegte Nägel" loading="lazy">
           </div>
           <div class="service-detail-text">
-            <h3>Manikuere und Pedikuere &mdash; Gepflegte Haende und Fuesse bis ins Detail</h3>
-            <p>Gepflegte Haende und Fuesse sind mehr als Aesthetik &mdash; sie sind ein Zeichen von Selbstfuersorge.</p>
-            <h4>Manikuere:</h4>
+            <h3>Maniküre und Pediküre &mdash; Gepflegte Hände und Füße bis ins Detail</h3>
+            <p>Gepflegte Hände und Füße sind mehr als Ästhetik &mdash; sie sind ein Zeichen von Selbstfürsorge.</p>
+            <h4>Maniküre:</h4>
             <ul class="service-detail-features">
-              <li>Professionelles Kuerzen, Feilen und Polieren der Naegel</li>
-              <li>Sorgfaeltige Nagelhautentfernung</li>
-              <li>Verwoehnende Handmassage zum Abschluss</li>
+              <li>Professionelles Kürzen, Feilen und Polieren der Nägel</li>
+              <li>Sorgfältige Nagelhautentfernung</li>
+              <li>Verwöhnende Handmassage zum Abschluss</li>
             </ul>
-            <h4>Pedikuere:</h4>
+            <h4>Pediküre:</h4>
             <ul class="service-detail-features">
-              <li>Gruendliche Hornhautentfernung</li>
+              <li>Gründliche Hornhautentfernung</li>
               <li>Nagelformung und Nagelhautpflege</li>
-              <li>Naegel-Oel und Pflegebehandlung</li>
-              <li>Entspannende Fussmassage</li>
+              <li>Nägel-Oel und Pflegebehandlung</li>
+              <li>Entspannende Fußmassage</li>
             </ul>
             <p class="service-detail-result">Perfekt gepflegt &mdash; von den Fingerspitzen bis zu den Zehen.</p>
             <div class="service-detail-cta">
-              <a href="#termin" class="btn btn-primary">Manikuere / Pedikuere buchen</a>
+              <a href="#termin" class="btn btn-primary">Maniküre / Pediküre buchen</a>
             </div>
           </div>
         </div>
@@ -1813,11 +1819,11 @@
             <h4>Unser Angebot:</h4>
             <ul class="service-detail-features">
               <li>Professionelle Hautreinigung mit hochwertigen Produkten</li>
-              <li>Microneedling mit hochkonzentrierter Hyaluronsaeure &mdash; fuer Hautstraffung, Porenverfeinerung und Feuchtigkeitsversorgung</li>
-              <li>Augenbrauenformung (Zupfen oder Waxing) und Faerben</li>
-              <li>Individuelle Pflegeempfehlungen fuer Zuhause</li>
+              <li>Microneedling mit hochkonzentrierter Hyaluronsäure &mdash; für Hautstraffung, Porenverfeinerung und Feuchtigkeitsversorgung</li>
+              <li>Augenbrauenformung (Zupfen oder Waxing) und Färben</li>
+              <li>Individuelle Pflegeempfehlungen für Zuhause</li>
             </ul>
-            <p class="service-detail-result">Die Haut ist das groesste Organ Deines Koerpers. Sie verdient professionelle Aufmerksamkeit.</p>
+            <p class="service-detail-result">Die Haut ist das größte Organ Deines Körpers. Sie verdient professionelle Aufmerksamkeit.</p>
             <div class="service-detail-cta">
               <a href="#termin" class="btn btn-primary">Hautpflege buchen</a>
             </div>
@@ -1828,7 +1834,7 @@
       <!-- CTA intermediario -->
       <div class="services-cta-bar" style="background: var(--off-white); border: 1px solid var(--grey-lighter); margin-top: 40px;" data-aos="fade-up">
         <p>Noch unsicher, welche Behandlung am besten zu Dir passt?</p>
-        <p class="sub">Kein Problem &mdash; wir beraten Dich gerne persoenlich und finden gemeinsam die ideale Pflege fuer Dich.</p>
+        <p class="sub">Kein Problem &mdash; wir beraten Dich gerne persönlich und finden gemeinsam die ideale Pflege für Dich.</p>
         <a href="#termin" class="btn btn-pink">Lass Dich beraten &mdash; Jetzt Kontakt aufnehmen</a>
         <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915167065729">+49 151 67065729</a></span>
       </div>
@@ -1841,32 +1847,32 @@
       <div class="section-header" data-aos="fade-up">
         <span class="section-label">Was uns auszeichnet</span>
         <h2 class="section-title">Was Reembeleza besonders macht</h2>
-        <p class="section-subtitle">Drei Saeulen, die jede Behandlung bei uns praegen.</p>
+        <p class="section-subtitle">Drei Säulen, die jede Behandlung bei uns prägen.</p>
       </div>
 
       <div class="pillars-grid">
         <div class="pillar-card" data-aos="fade-up" data-aos-delay="0">
           <div class="pillar-number">01</div>
           <h3>Brasilianische Technik &mdash; weltweit anerkannt</h3>
-          <p>Brasilien ist eine der fuehrenden Nationen in Aesthetik und Koerperpflege. Diese Expertise bringen wir nach Koblenz &mdash; mit Techniken, die auf Praezision, Sorgfalt und sichtbaren Ergebnissen basieren.</p>
+          <p>Brasilien ist eine der führenden Nationen in Ästhetik und Körperpflege. Diese Expertise bringen wir nach Koblenz &mdash; mit Techniken, die auf Präzision, Sorgfalt und sichtbaren Ergebnissen basieren.</p>
         </div>
 
         <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
           <div class="pillar-number">02</div>
-          <h3>Deutscher Qualitaetsstandard</h3>
-          <p>Hoechste Hygiene, professionelle Ausstattung und aktuelle Behandlungsprotokolle. Jeder Handgriff folgt einem klaren Standard &mdash; sicher, sauber und zuverlaessig.</p>
+          <h3>Deutscher Qualitätsstandard</h3>
+          <p>Höchste Hygiene, professionelle Ausstattung und aktuelle Behandlungsprotokolle. Jeder Handgriff folgt einem klaren Standard &mdash; sicher, sauber und zuverlässig.</p>
         </div>
 
         <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
           <div class="pillar-number">03</div>
-          <h3>Persoenliche Betreuung &mdash; keine Kundin ist wie die andere</h3>
-          <p>Bei uns gibt es keine Standardbehandlungen. Wir hoeren zu, analysieren und passen jede Behandlung individuell an Deine Haut, Deinen Koerper und Deine Wuensche an.</p>
+          <h3>Persönliche Betreuung &mdash; keine Kundin ist wie die andere</h3>
+          <p>Bei uns gibt es keine Standardbehandlungen. Wir hören zu, analysieren und passen jede Behandlung individuell an Deine Haut, Deinen Körper und Deine Wünsche an.</p>
         </div>
       </div>
 
       <div class="pillars-bottom" data-aos="fade-up">
-        <p><span class="highlight">Seit 2015 aktiv.</span> Ueber 10 Jahre Erfahrung. Hunderte zufriedene Kundinnen in Koblenz.</p>
-        <p>Das Ergebnis: eine Verbindung aus Fachwissen, Qualitaet und menschlicher Waerme, die Du bei jeder Behandlung spuerst.</p>
+        <p><span class="highlight">Seit 2015 aktiv.</span> Über 10 Jahre Erfahrung. Hunderte zufriedene Kundinnen in Koblenz.</p>
+        <p>Das Ergebnis: eine Verbindung aus Fachwissen, Qualität und menschlicher Wärme, die Du bei jeder Behandlung spürst.</p>
       </div>
     </div>
   </section>
@@ -1884,15 +1890,15 @@
           <div class="step-number">01</div>
           <div class="step-content">
             <h3>Terminbuchung</h3>
-            <p>Waehle Deine gewuenschte Behandlung und buche Deinen Termin online oder per Telefon. Wir finden gemeinsam den besten Zeitpunkt fuer Dich.</p>
+            <p>Wähle Deine gewünschte Behandlung und buche Deinen Termin online oder per Telefon. Wir finden gemeinsam den besten Zeitpunkt für Dich.</p>
           </div>
         </div>
 
         <div class="step-item" data-aos="fade-up" data-aos-delay="100">
           <div class="step-number">02</div>
           <div class="step-content">
-            <h3>Persoenliches Gespraech</h3>
-            <p>Vor jeder Behandlung nehmen wir uns Zeit fuer Dich. Wir besprechen Deine Wuensche, analysieren Deine Haut oder Deinen Koerper und stimmen die Behandlung individuell ab.</p>
+            <h3>Persönliches Gespräch</h3>
+            <p>Vor jeder Behandlung nehmen wir uns Zeit für Dich. Wir besprechen Deine Wünsche, analysieren Deine Haut oder Deinen Körper und stimmen die Behandlung individuell ab.</p>
           </div>
         </div>
 
@@ -1900,7 +1906,7 @@
           <div class="step-number">03</div>
           <div class="step-content">
             <h3>Deine Behandlung</h3>
-            <p>In einer ruhigen, einladenden Atmosphaere fuehren wir die Behandlung mit hoechster Sorgfalt durch. Sanfte Musik, angenehmes Licht und volle Aufmerksamkeit &mdash; damit Du Dich vollkommen entspannen kannst.</p>
+            <p>In einer ruhigen, einladenden Atmosphäre führen wir die Behandlung mit höchster Sorgfalt durch. Sanfte Musik, angenehmes Licht und volle Aufmerksamkeit &mdash; damit Du Dich vollkommen entspannen kannst.</p>
           </div>
         </div>
 
@@ -1908,15 +1914,15 @@
           <div class="step-number">04</div>
           <div class="step-content">
             <h3>Nachpflege und Empfehlungen</h3>
-            <p>Nach der Behandlung erhaeltst Du professionelle Tipps und Pflegeempfehlungen, damit Deine Ergebnisse laenger anhalten und Deine Haut optimal versorgt bleibt.</p>
+            <p>Nach der Behandlung erhältst Du professionelle Tipps und Pflegeempfehlungen, damit Deine Ergebnisse länger anhalten und Deine Haut optimal versorgt bleibt.</p>
           </div>
         </div>
 
         <div class="step-item" data-aos="fade-up" data-aos-delay="400">
           <div class="step-number">05</div>
           <div class="step-content">
-            <h3>Dein neues Wohlgefuehl</h3>
-            <p>Du verlaesst unser Studio mit einem Laecheln, frischer Haut und einem Gefuehl von Leichtigkeit und Selbstvertrauen.</p>
+            <h3>Dein neues Wohlgefühl</h3>
+            <p>Du verlässt unser Studio mit einem Lächeln, frischer Haut und einem Gefühl von Leichtigkeit und Selbstvertrauen.</p>
           </div>
         </div>
       </div>
@@ -1932,20 +1938,20 @@
     <div class="container">
       <div class="for-you-grid">
         <div data-aos="fade-right">
-          <span class="section-label">Fuer Dich</span>
-          <h2 class="section-title">Reembeleza ist fuer Dich, wenn...</h2>
+          <span class="section-label">Für Dich</span>
+          <h2 class="section-title">Reembeleza ist für Dich, wenn...</h2>
           <ul class="for-you-list">
-            <li>Du Dir endlich Zeit fuer Dich selbst nehmen moechtest &mdash; ohne schlechtes Gewissen</li>
-            <li>Du Ergebnisse suchst, die man sieht und spuert, nicht nur oberflaechliche Behandlungen</li>
-            <li>Du Wert auf natuerliche, harmonische Ergebnisse legst &mdash; nichts Uebertriebenes oder Kuenstliches</li>
-            <li>Du eine Fachfrau moechtest, die wirklich zuhoert und auf Deine individuellen Beduerfnisse eingeht</li>
-            <li>Du mehr als einen Termin suchst &mdash; ein Erlebnis, das Koerper und Seele gut tut</li>
-            <li>Du Qualitaet, Hygiene und Professionalitaet schaetzt</li>
-            <li>Du einen vertrauensvollen Ort suchst, an den Du immer wieder gerne zurueckkommst</li>
+            <li>Du Dir endlich Zeit für Dich selbst nehmen möchtest &mdash; ohne schlechtes Gewissen</li>
+            <li>Du Ergebnisse suchst, die man sieht und spürt, nicht nur oberflächliche Behandlungen</li>
+            <li>Du Wert auf natürliche, harmonische Ergebnisse legst &mdash; nichts Übertriebenes oder Künstliches</li>
+            <li>Du eine Fachfrau möchtest, die wirklich zuhört und auf Deine individuellen Bedürfnisse eingeht</li>
+            <li>Du mehr als einen Termin suchst &mdash; ein Erlebnis, das Körper und Seele gut tut</li>
+            <li>Du Qualität, Hygiene und Professionalität schätzt</li>
+            <li>Du einen vertrauensvollen Ort suchst, an den Du immer wieder gerne zurückkommst</li>
           </ul>
         </div>
         <div class="for-you-image" data-aos="fade-left">
-          <img src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Schoenheitspflege - Dein Wohlbefinden" loading="lazy">
+          <img src="https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" alt="Schönheitspflege - Dein Wohlbefinden" loading="lazy">
         </div>
       </div>
       <p class="for-you-closing" data-aos="fade-up">Egal ob Du zum ersten Mal kommst oder schon lange nach dem richtigen Studio suchst &mdash; bei Reembeleza bist Du willkommen.</p>
@@ -1963,7 +1969,7 @@
       <div class="testimonials-grid">
         <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
           <div class="testimonial-quote">&ldquo;</div>
-          <p>Seit ich bei Renata bin, gehe ich nirgendwo anders mehr hin. Das Brazilian Waxing ist so praezise und gleichzeitig schonend &mdash; ich habe noch nie so glatte Haut gehabt. Und die Atmosphaere ist einfach wunderbar.</p>
+          <p>Seit ich bei Renata bin, gehe ich nirgendwo anders mehr hin. Das Brazilian Waxing ist so präzise und gleichzeitig schonend &mdash; ich habe noch nie so glatte Haut gehabt. Und die Atmosphäre ist einfach wunderbar.</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">C</div>
             <div>
@@ -1975,7 +1981,7 @@
 
         <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
           <div class="testimonial-quote">&ldquo;</div>
-          <p>Die Lymphdrainage hat mir unglaublich gut getan. Ich fuehlte mich danach so leicht und entspannt. Renata erklaert genau, was sie macht und warum. Man merkt die Erfahrung in jedem Handgriff.</p>
+          <p>Die Lymphdrainage hat mir unglaublich gut getan. Ich fühlte mich danach so leicht und entspannt. Renata erklärt genau, was sie macht und warum. Man merkt die Erfahrung in jedem Handgriff.</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">S</div>
             <div>
@@ -1999,7 +2005,7 @@
 
         <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
           <div class="testimonial-quote">&ldquo;</div>
-          <p>Mein Wimperlifting sieht so natuerlich aus &mdash; meine Kolleginnen fragen mich staendig, was ich anders mache. Es spart mir jeden Morgen Zeit und ich fuehle mich einfach wohler.</p>
+          <p>Mein Wimperlifting sieht so natürlich aus &mdash; meine Kolleginnen fragen mich ständig, was ich anders mache. Es spart mir jeden Morgen Zeit und ich fühle mich einfach wohler.</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">A</div>
             <div>
@@ -2011,7 +2017,7 @@
 
         <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
           <div class="testimonial-quote">&ldquo;</div>
-          <p>Die Paarmassage war das schoenste Geschenk, das wir uns gemacht haben. Absolut professionell, entspannend und liebevoll. Wir kommen definitiv wieder.</p>
+          <p>Die Paarmassage war das schönste Geschenk, das wir uns gemacht haben. Absolut professionell, entspannend und liebevoll. Wir kommen definitiv wieder.</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">J</div>
             <div>
@@ -2022,7 +2028,7 @@
         </div>
       </div>
 
-      <p class="testimonials-disclaimer" data-aos="fade-up">Ergebnisse koennen individuell variieren.</p>
+      <p class="testimonials-disclaimer" data-aos="fade-up">Ergebnisse können individuell variieren.</p>
     </div>
   </section>
 
@@ -2035,9 +2041,9 @@
         </div>
         <div class="about-text" data-aos="fade-left">
           <span class="section-label">Deine Spezialistin</span>
-          <h2 class="section-title">Ueber Renata &mdash; Deine Spezialistin fuer Schoenheit und Wohlbefinden</h2>
-          <p>Ich bin Renata, Gruenderin und Inhaberin von Reembeleza.</p>
-          <p>Seit 2015 ausgebildete Kosmetikerin &mdash; mit einer Ausbildung, die in Brasilien begann und in Deutschland mit weiteren Qualifikationen vertieft wurde. Ueber 10 Jahre Erfahrung in der professionellen Aesthetik. Zusaetzlich kaufmaennisch ausgebildet und im Bereich Marketing weitergebildet.</p>
+          <h2 class="section-title">Über Renata &mdash; Deine Spezialistin für Schönheit und Wohlbefinden</h2>
+          <p>Ich bin Renata, Gründerin und Inhaberin von Reembeleza.</p>
+          <p>Seit 2015 ausgebildete Kosmetikerin &mdash; mit einer Ausbildung, die in Brasilien begann und in Deutschland mit weiteren Qualifikationen vertieft wurde. Über 10 Jahre Erfahrung in der professionellen Ästhetik. Zusätzlich kaufmännisch ausgebildet und im Bereich Marketing weitergebildet.</p>
 
           <div class="about-qualifications">
             <h4>Qualifikationen</h4>
@@ -2045,12 +2051,12 @@
               <li>Ausgebildete Kosmetikerin seit 2015</li>
               <li>Spezialisierung auf Brazilian Waxing, Sugaring und Lymphdrainage</li>
               <li>Fortlaufende Weiterbildung in modernen Behandlungstechniken</li>
-              <li>Erfahrung in brasilianischen und deutschen Qualitaetsstandards</li>
-              <li>Arbeit ausschliesslich mit hochwertigen, geprueften Produkten</li>
+              <li>Erfahrung in brasilianischen und deutschen Qualitätsstandards</li>
+              <li>Arbeit ausschließlich mit hochwertigen, geprüften Produkten</li>
             </ul>
           </div>
 
-          <p>Mein Ansatz ist klar: nicht uebertreiben, sondern die natuerliche Schoenheit gezielt hervorheben. Jede Behandlung fuehre ich mit voller Aufmerksamkeit, hoechster Hygiene und individueller Abstimmung durch.</p>
+          <p>Mein Ansatz ist klar: nicht übertreiben, sondern die natürliche Schönheit gezielt hervorheben. Jede Behandlung führe ich mit voller Aufmerksamkeit, höchster Hygiene und individueller Abstimmung durch.</p>
 
           <p class="about-closing">Ich freue mich auf Dich.</p>
 
@@ -2067,7 +2073,7 @@
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-label">FAQ</span>
-        <h2 class="section-title">Haeufig gestellte Fragen</h2>
+        <h2 class="section-title">Häufig gestellte Fragen</h2>
       </div>
 
       <div class="faq-list">
@@ -2087,7 +2093,7 @@
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Sugaring wird in Haarwuchsrichtung entfernt, was von den meisten Kundinnen als deutlich angenehmer empfunden wird. Besonders fuer empfindliche Haut und den Intimbereich ist Sugaring eine schonende Alternative.</p>
+            <p>Sugaring wird in Haarwuchsrichtung entfernt, was von den meisten Kundinnen als deutlich angenehmer empfunden wird. Besonders für empfindliche Haut und den Intimbereich ist Sugaring eine schonende Alternative.</p>
           </div>
         </div>
 
@@ -2097,27 +2103,27 @@
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Bereits eine Sitzung kann spuerbare Leichtigkeit bringen. Fuer nachhaltige Ergebnisse empfehlen wir je nach Bedarf regelmaessige Sitzungen. Wir erstellen gemeinsam einen individuellen Plan.</p>
+            <p>Bereits eine Sitzung kann spürbare Leichtigkeit bringen. Für nachhaltige Ergebnisse empfehlen wir je nach Bedarf regelmäßige Sitzungen. Wir erstellen gemeinsam einen individuellen Plan.</p>
           </div>
         </div>
 
         <div class="faq-item" data-aos="fade-up">
           <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Wie lange haelt ein Wimperlifting?</h3>
+            <h3>Wie lange hält ein Wimperlifting?</h3>
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Ein Wimperlifting haelt in der Regel 6 bis 8 Wochen, abhaengig von Deinem natuerlichen Wimpernwachstum. Keine Extensions, kein Kleber &mdash; nur Deine eigenen Wimpern, perfekt geformt.</p>
+            <p>Ein Wimperlifting hält in der Regel 6 bis 8 Wochen, abhängig von Deinem natürlichen Wimpernwachstum. Keine Extensions, kein Kleber &mdash; nur Deine eigenen Wimpern, perfekt geformt.</p>
           </div>
         </div>
 
         <div class="faq-item" data-aos="fade-up">
           <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Ich habe sehr empfindliche Haut. Koennt Ihr trotzdem behandeln?</h3>
+            <h3>Ich habe sehr empfindliche Haut. Könnt Ihr trotzdem behandeln?</h3>
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Absolut. Wir arbeiten mit hochwertigen, hautvertraeglichen Produkten und passen jede Behandlung an Deinen Hauttyp an. Empfindliche Haut ist bei uns in besten Haenden.</p>
+            <p>Absolut. Wir arbeiten mit hochwertigen, hautverträglichen Produkten und passen jede Behandlung an Deinen Hauttyp an. Empfindliche Haut ist bei uns in besten Händen.</p>
           </div>
         </div>
 
@@ -2127,7 +2133,7 @@
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Du kannst Deinen Termin ganz einfach online ueber unsere Buchungsseite vereinbaren, uns per Telefon (+49 151 67065729) oder per E-Mail (reembeleza@gmail.com) kontaktieren.</p>
+            <p>Du kannst Deinen Termin ganz einfach online über unsere Buchungsseite vereinbaren, uns per Telefon (+49 151 67065729) oder per E-Mail (reembeleza@gmail.com) kontaktieren.</p>
           </div>
         </div>
 
@@ -2137,17 +2143,17 @@
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Reembeleza liegt in Koblenz, Goebensiedlung 30B, 56077 Koblenz. Leicht erreichbar und mit einer ruhigen, einladenden Atmosphaere.</p>
+            <p>Reembeleza liegt in Koblenz, Göbensiedlung 30B, 56077 Koblenz. Leicht erreichbar und mit einer ruhigen, einladenden Atmosphäre.</p>
           </div>
         </div>
 
         <div class="faq-item" data-aos="fade-up">
           <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Bietet Ihr auch Behandlungen fuer Maenner an?</h3>
+            <h3>Bietet Ihr auch Behandlungen für Männer an?</h3>
             <div class="faq-toggle"><span>+</span></div>
           </div>
           <div class="faq-answer">
-            <p>Ja. Wir bieten professionelles Maennerwaxing fuer verschiedene Koerperbereiche an &mdash; diskret, gruendlich und professionell.</p>
+            <p>Ja. Wir bieten professionelles Männerwaxing für verschiedene Körperbereiche an &mdash; diskret, gründlich und professionell.</p>
           </div>
         </div>
       </div>
@@ -2160,16 +2166,16 @@
       <div class="final-cta-content" data-aos="fade-up">
         <span class="section-label">Bereit?</span>
         <h2 class="section-title">Dein Wohlbefinden beginnt mit einer Entscheidung</h2>
-        <p>Du hast bis hierher gelesen &mdash; und das zeigt, dass Du bereit bist, etwas fuer Dich zu tun.</p>
-        <p>Du verdienst mehr als oberflaechliche Behandlungen und unpersoenlichen Service. Du verdienst einen Ort, an dem Deine Schoenheit, Deine Haut und Dein Wohlbefinden im Mittelpunkt stehen.</p>
-        <p class="emphasis">Im Reembeleza erwartet Dich brasilianische Schoenheitsexpertise, deutsche Qualitaet und eine Fachfrau, die sich wirklich um Dich kuemmert.</p>
-        <p>Unsere Terminplaetze sind begrenzt, da wir jede Kundin individuell betreuen. Sichere Dir jetzt Deinen persoenlichen Wohlfuehl-Termin.</p>
+        <p>Du hast bis hierher gelesen &mdash; und das zeigt, dass Du bereit bist, etwas für Dich zu tun.</p>
+        <p>Du verdienst mehr als oberflächliche Behandlungen und unpersönlichen Service. Du verdienst einen Ort, an dem Deine Schönheit, Deine Haut und Dein Wohlbefinden im Mittelpunkt stehen.</p>
+        <p class="emphasis">Im Reembeleza erwartet Dich brasilianische Schönheitsexpertise, deutsche Qualität und eine Fachfrau, die sich wirklich um Dich kümmert.</p>
+        <p>Unsere Terminplätze sind begrenzt, da wir jede Kundin individuell betreuen. Sichere Dir jetzt Deinen persönlichen Wohlfühl-Termin.</p>
         <div class="final-cta-buttons">
-          <a href="tel:+4915167065729" class="btn btn-pink">Jetzt Deinen Wohlfuehl-Termin vereinbaren</a>
+          <a href="tel:+4915167065729" class="btn btn-pink">Jetzt Deinen Wohlfühl-Termin vereinbaren</a>
           <a href="mailto:reembeleza@gmail.com" class="btn btn-outline" style="color: var(--white); border-color: rgba(255,255,255,0.3);">E-Mail schreiben</a>
         </div>
         <div class="final-cta-contact">
-          <p>Lieber persoenlich? Ruf uns an: <a href="tel:+4915167065729">+49 151 67065729</a></p>
+          <p>Lieber persönlich? Ruf uns an: <a href="tel:+4915167065729">+49 151 67065729</a></p>
           <p>Oder schreib uns: <a href="mailto:reembeleza@gmail.com">reembeleza@gmail.com</a></p>
         </div>
       </div>
@@ -2182,7 +2188,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Reembeleza</div>
-          <p class="footer-desc">Brasilianische Schoenheitspflege mit deutscher Praezision. Dein Kosmetikstudio in Koblenz fuer professionelle Hautpflege, Waxing, Massagen und Wohlbefinden.</p>
+          <p class="footer-desc">Brasilianische Schönheitspflege mit deutscher Präzision. Dein Kosmetikstudio in Koblenz für professionelle Hautpflege, Waxing, Massagen und Wohlbefinden.</p>
         </div>
         <div>
           <h4>Behandlungen</h4>
@@ -2199,7 +2205,7 @@
           <h4>Kontakt</h4>
           <div class="footer-contact-item">
             <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
-            <span>Goebensiedlung 30B, 56077 Koblenz</span>
+            <span>Göbensiedlung 30B, 56077 Koblenz</span>
           </div>
           <div class="footer-contact-item">
             <i data-lucide="phone" style="width:16px;height:16px;"></i>
@@ -2213,7 +2219,7 @@
             <i data-lucide="instagram" style="width:16px;height:16px;"></i>
             <a href="https://instagram.com/reembelezakosmetikstudio" target="_blank" rel="noopener">@reembelezakosmetikstudio</a>
           </div>
-          <p style="font-size: 0.85rem; margin-top: 16px; color: rgba(255,255,255,0.35);">Termine auf Anfrage erhaeltlich.</p>
+          <p style="font-size: 0.85rem; margin-top: 16px; color: rgba(255,255,255,0.35);">Termine auf Anfrage erhältlich.</p>
         </div>
       </div>
       <div class="footer-bottom">
