@@ -531,8 +531,14 @@
             margin-top: 28px;
         }
 
-        .services-grid-4 .service-card:last-child {
-            grid-column: 1 / -1;
+        .services-grid-4-duo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 28px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .service-card {
@@ -1619,7 +1625,16 @@
             }
         }
 
+        
+        .services-grid-4-duo .service-card {
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+        }
+
         @media (max-width: 768px) {
+            .services-grid-4-duo {
+                grid-template-columns: 1fr;
+                max-width: none;
+            }
             .navbar-cta {
                 display: none;
             }
@@ -1987,6 +2002,9 @@
                         <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
+            </div>
+
+            <div class="services-grid-4-duo">
                 <!-- Card 7: Manik&uuml;re und Pedik&uuml;re -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <img class="service-card-image" src="imagens/manicure-alterar.jpeg" alt="Manik&uuml;re und Pedik&uuml;re">
