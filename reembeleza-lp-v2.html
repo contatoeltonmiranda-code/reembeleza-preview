@@ -530,6 +530,8 @@
             overflow: hidden;
             transition: all 0.4s ease;
             box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
@@ -551,6 +553,14 @@
 
         .service-card-content {
             padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-card-content .btn {
+            margin-top: auto;
+            align-self: flex-start;
         }
 
         .service-card-title {
@@ -1608,6 +1618,15 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                background-image: url('imagens/mobile.png');
+                background-position: top center;
+            }
+
+            .hero-content {
+                padding-top: 120px;
+            }
+
             .navbar-cta {
                 display: none;
             }
@@ -1793,7 +1812,7 @@
                 <img src="imagens/reembelza-weiss.svg" alt="Reembeleza Kosmetikstudio">
             </a>
             <div class="navbar-cta">
-                <a href="#termin" class="btn" style="border-radius: 12px;">Termin vereinbaren</a>
+                <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn" style="border-radius: 12px;">Termin vereinbaren</a>
             </div>
             <button class="navbar-menu-toggle" aria-label="Menu">
                 <span></span>
@@ -1809,7 +1828,7 @@
             <span class="hero-label">Kosmetikstudio in Koblenz</span>
             <h1 class="hero-title">Wann hast Du Dich das letzte Mal wirklich sch&ouml;n gef&uuml;hlt?</h1>
             <p class="hero-subtitle">Brasilianische Sch&ouml;nheitspflege. Deutsche Pr&auml;zision. Dein neues Wohlgef&uuml;hl. Entdecke im Reembeleza Kosmetikstudio in Koblenz, wie sich professionelle Hautpflege, Brazilian Waxing und k&ouml;rperliches Wohlbefinden anf&uuml;hlen &mdash; mit Technik, Hingabe und einem Ergebnis, das Du sp&uuml;rst.</p>
-            <a href="#termin" class="btn btn-pink">Jetzt Termin vereinbaren</a>
+            <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-pink">Jetzt Termin vereinbaren</a>
         </div>
     </section>
 
@@ -1895,7 +1914,7 @@
                             <li>Langanhaltend glatte Haut</li>
                             <li>Schonende Nachpflege</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1910,7 +1929,7 @@
                             <li>Weniger Schmerz, weniger Irritation</li>
                             <li>Ideal f&uuml;r sensible Haut</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1925,7 +1944,7 @@
                             <li>Sp&uuml;rbare Leichtigkeit</li>
                             <li>Therapeutischer Effekt</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
             </div>
@@ -1942,7 +1961,7 @@
                             <li>Haltbarkeit 6-8 Wochen</li>
                             <li>Individuelle Anpassung</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1957,7 +1976,7 @@
                             <li>Shiatsu, Sportmassage</li>
                             <li>Paarmassage</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1972,7 +1991,7 @@
                             <li>Microneedling mit Hyalurons&auml;ure</li>
                             <li>Augenbrauenformung</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
                 <!-- Card 7: Manik&uuml;re und Pedik&uuml;re -->
@@ -1986,7 +2005,7 @@
                             <li>Verw&ouml;hnende Handmassage</li>
                             <li>Entspannende Fu&szlig;massage</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
             </div>
@@ -2013,7 +2032,7 @@
                         <li>Ausf&uuml;hrliche Beratung f&uuml;r Deine individuellen Bed&uuml;rfnisse</li>
                     </ul>
                     <p class="service-detail-result">Das Ergebnis: seidig glatte Haut, ein frisches K&ouml;rpergef&uuml;hl und ein Selbstbewusstsein, das wochenlang anh&auml;lt.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Brazilian Waxing buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Brazilian Waxing buchen</a>
                 </div>
             </div>
         </section>
@@ -2036,7 +2055,7 @@
                         <li>Geeignet auch f&uuml;r Allergikerinnen</li>
                     </ul>
                     <p class="service-detail-result">Perfekt f&uuml;r alle, die nat&uuml;rliche Pflege und sanfte Behandlung bevorzugen.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Sugaring buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Sugaring buchen</a>
                 </div>
             </div>
         </section>
@@ -2059,7 +2078,7 @@
                         <li>Tiefe Entspannung mit therapeutischem Effekt</li>
                     </ul>
                     <p class="service-detail-result">Viele Kundinnen berichten schon nach der ersten Sitzung von einem sichtbar entschw&auml;mmten K&ouml;rper und einem v&ouml;llig neuen K&ouml;rpergef&uuml;hl.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Lymphdrainage buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Lymphdrainage buchen</a>
                 </div>
             </div>
         </section>
@@ -2081,7 +2100,7 @@
                         <li>Individuelle Anpassung an Deine Augenform und Wimpernl&auml;nge</li>
                     </ul>
                     <p class="service-detail-result">Ideal f&uuml;r Frauen, die einen ausdrucksvollen Blick m&ouml;chten &mdash; nat&uuml;rlich, elegant und ohne t&auml;glichen Aufwand.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Wimperlifting buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Wimperlifting buchen</a>
                 </div>
             </div>
         </section>
@@ -2106,7 +2125,7 @@
                         <li>Paarmassage &mdash; gemeinsame Entspannung zu zweit</li>
                     </ul>
                     <p class="service-detail-result">Ob Alltagsstress, k&ouml;rperliche Verspannungen oder einfach eine Auszeit &mdash; hier finden Sie genau das, was Ihr K&ouml;rper braucht.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Massage buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Massage buchen</a>
                 </div>
             </div>
         </section>
@@ -2133,7 +2152,7 @@
                         <li>Entspannende Fu&szlig;massage</li>
                     </ul>
                     <p class="service-detail-result">Perfekt gepflegt &mdash; von den Fingerspitzen bis zu den Zehen.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Manik&uuml;re / Pedik&uuml;re buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Manik&uuml;re / Pedik&uuml;re buchen</a>
                 </div>
             </div>
         </section>
@@ -2154,7 +2173,7 @@
                         <li>Individuelle Pflegeempfehlungen f&uuml;r Zuhause</li>
                     </ul>
                     <p class="service-detail-result">Die Haut ist das gr&ouml;&szlig;te Organ Deines K&ouml;rpers. Sie verdient professionelle Aufmerksamkeit.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Hautpflege buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Hautpflege buchen</a>
                 </div>
             </div>
         </section>
@@ -2166,7 +2185,7 @@
             <div class="cta-bar-inner" data-aos="fade-up">
                 <h3>Noch unsicher, welche Behandlung am besten zu Ihnen passt?</h3>
                 <p>Kein Problem &mdash; wir beraten Sie gerne pers&ouml;nlich und finden gemeinsam die ideale Pflege f&uuml;r Sie.</p>
-                <a href="#termin" class="btn btn-pink">Lassen Sie sich beraten &mdash; Jetzt Kontakt aufnehmen</a>
+                <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-pink">Lassen Sie sich beraten &mdash; Jetzt Kontakt aufnehmen</a>
                 <a href="tel:+4915167065729" class="cta-bar-phone">Oder ruf uns direkt an: +49 151 67065729</a>
             </div>
         </div>
@@ -2253,7 +2272,7 @@
             </div>
 
             <div class="steps-cta" data-aos="fade-up">
-                <a href="#termin" class="btn btn-primary">Jetzt Deinen Termin buchen</a>
+                <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Deinen Termin buchen</a>
             </div>
         </div>
     </section>
@@ -2388,7 +2407,7 @@
                     <p>Mein Ansatz ist klar: nicht &uuml;bertreiben, sondern die nat&uuml;rliche Sch&ouml;nheit gezielt hervorheben. Jede Behandlung f&uuml;hre ich mit voller Aufmerksamkeit, h&ouml;chster Hygiene und individueller Abstimmung durch.</p>
                     <p class="about-closing">Ich freue mich auf Dich.</p>
                     <br>
-                    <a href="#termin" class="btn btn-primary">Jetzt Termin bei Renata buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Termin bei Renata buchen</a>
                 </div>
             </div>
         </div>
@@ -2559,8 +2578,8 @@
             <div class="footer-bottom">
                 <div>&copy; 2026 Reembeleza Kosmetikstudio. Alle Rechte vorbehalten.</div>
                 <div class="footer-bottom-links">
-                    <a href="#">Impressum</a>
-                    <a href="#">Datenschutz</a>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
                 </div>
             </div>
         </div>
