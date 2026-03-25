@@ -299,10 +299,10 @@
         }
 
         .hero-title {
-            font-size: 0.5rem;
+            font-size: 2.9rem;
             color: var(--black);
             font-weight: 600;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 28px;
             max-width: 700px;
         }
@@ -514,9 +514,13 @@
 
         .services-grid-4 {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 28px;
             margin-top: 28px;
+        }
+
+        .services-grid-4 .service-card:last-child {
+            grid-column: 1 / -1;
         }
 
         .service-card {
@@ -526,6 +530,8 @@
             overflow: hidden;
             transition: all 0.4s ease;
             box-shadow: 6px 8px 20px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
@@ -547,6 +553,14 @@
 
         .service-card-content {
             padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-card-content .btn {
+            margin-top: auto;
+            align-self: flex-start;
         }
 
         .service-card-title {
@@ -1604,6 +1618,15 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                background-image: url('imagens/mobile.png');
+                background-position: top center;
+            }
+
+            .hero-content {
+                padding-top: 120px;
+            }
+
             .navbar-cta {
                 display: none;
             }
@@ -1613,7 +1636,7 @@
             }
 
             .hero-title {
-                font-size: clamp(1.5rem, 5vw, 2.1rem);
+                font-size: clamp(1.5rem, 5vw, 2rem);
             }
 
             .section-title {
@@ -1723,7 +1746,7 @@
             }
 
             .hero-title {
-                font-size: clamp(1.4rem, 6vw, 1.75rem);
+                font-size: clamp(1.3rem, 5.5vw, 1.7rem);
             }
 
             .hero-subtitle {
@@ -1789,7 +1812,7 @@
                 <img src="imagens/reembelza-weiss.svg" alt="Reembeleza Kosmetikstudio">
             </a>
             <div class="navbar-cta">
-                <a href="#termin" class="btn" style="border-radius: 12px;">Termin vereinbaren</a>
+                <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn" style="border-radius: 12px;">Termin vereinbaren</a>
             </div>
             <button class="navbar-menu-toggle" aria-label="Menu">
                 <span></span>
@@ -1805,7 +1828,7 @@
             <span class="hero-label">Kosmetikstudio in Koblenz</span>
             <h1 class="hero-title">Wann hast Du Dich das letzte Mal wirklich sch&ouml;n gef&uuml;hlt?</h1>
             <p class="hero-subtitle">Brasilianische Sch&ouml;nheitspflege. Deutsche Pr&auml;zision. Dein neues Wohlgef&uuml;hl. Entdecke im Reembeleza Kosmetikstudio in Koblenz, wie sich professionelle Hautpflege, Brazilian Waxing und k&ouml;rperliches Wohlbefinden anf&uuml;hlen &mdash; mit Technik, Hingabe und einem Ergebnis, das Du sp&uuml;rst.</p>
-            <a href="#termin" class="btn btn-pink">Jetzt Termin vereinbaren</a>
+            <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-pink">Jetzt Termin vereinbaren</a>
         </div>
     </section>
 
@@ -1827,14 +1850,14 @@
     <section class="pain-section" id="kennst-du">
         <div class="container">
             <div class="section-label-center" data-aos="fade-up">
-                <span class="section-label">Kennst Du das?</span>
+                <span class="section-label">Kennen Sie das?</span>
             </div>
             <div class="pain-text" data-aos="fade-up" data-aos-delay="100">
-                <p>Du gibst jeden Tag alles &mdash; f&uuml;r die Arbeit, die Familie, den Alltag. Aber wann hast Du Dir das letzte Mal wirklich Zeit f&uuml;r Dich selbst genommen?</p>
-                <p>Vielleicht hast Du schon Behandlungen ausprobiert, die oberfl&auml;chlich waren. Ergebnisse, die nach wenigen Tagen verschwunden sind. Termine, bei denen Du Dich wie eine Nummer gef&uuml;hlt hast.</p>
+                <p>Sie geben jeden Tag alles &mdash; f&uuml;r die Arbeit, die Familie, den Alltag. Aber wann haben Sie sich das letzte Mal wirklich Zeit f&uuml;r sich selbst genommen?</p>
+                <p>Vielleicht haben Sie schon Behandlungen ausprobiert, die oberfl&auml;chlich waren. Ergebnisse, die nach wenigen Tagen verschwunden sind. Termine, bei denen Sie sich wie eine Nummer gef&uuml;hlt haben.</p>
                 <p>Und mit der Zeit wird es schwerer. Der Blick in den Spiegel f&uuml;hlt sich nicht mehr so an wie fr&uuml;her. Die eigene Haut, der eigene K&ouml;rper &mdash; irgendwann verliert man das Gef&uuml;hl f&uuml;r sich selbst.</p>
                 <p>Aber das muss nicht so bleiben.</p>
-                <p>Du w&uuml;nschst Dir Ergebnisse, die man sieht und sp&uuml;rt. Pflege, die auf Dich pers&ouml;nlich abgestimmt ist. Einen Ort, an dem Du Dich wirklich entspannen und loslassen kannst.</p>
+                <p>Sie w&uuml;nschen sich Ergebnisse, die man sieht und sp&uuml;rt. Pflege, die auf Sie pers&ouml;nlich abgestimmt ist. Einen Ort, an dem Sie sich wirklich entspannen und loslassen k&ouml;nnen.</p>
                 <p class="pain-highlight">Und genau daf&uuml;r gibt es Reembeleza.</p>
             </div>
         </div>
@@ -1850,7 +1873,7 @@
                     <p>Brasilien ist weltweit bekannt f&uuml;r seine Expertise in &Auml;sthetik, Hautpflege und K&ouml;rperbewusstsein. Deutschland steht f&uuml;r Pr&auml;zision, Qualit&auml;t und h&ouml;chste Anspr&uuml;che.</p>
                     <p>Reembeleza vereint das Beste aus beiden Welten &mdash; in einem Studio mitten in Koblenz.</p>
                     <p>Hier geht es nicht um schnelle Termine oder Standardbehandlungen. Hier geht es darum, jede Kundin als das zu sehen, was sie ist: einzigartig. Mit individuellen Bed&uuml;rfnissen, die individuelle Pflege verdienen.</p>
-                    <p>Kein Massenangebot. Keine Kompromisse. Sondern Sch&ouml;nheitspflege mit Herz, Technik und einem klaren Anspruch: dass Du Dich nach jeder Behandlung sch&ouml;ner, leichter und selbstbewusster f&uuml;hlst.</p>
+                    <p>Kein Massenangebot. Keine Kompromisse. Sondern Sch&ouml;nheitspflege mit Herz, Technik und einem klaren Anspruch: dass Sie sich nach jeder Behandlung sch&ouml;ner, leichter und selbstbewusster f&uuml;hlen.</p>
                     <div class="story-stats">
                         <div class="story-stat">
                             <span class="story-stat-value">10+</span>
@@ -1877,7 +1900,7 @@
                 <span class="section-label">Behandlungen</span>
             </div>
             <h2 class="section-title" style="text-align:center;" data-aos="fade-up">Unsere Behandlungen &mdash; f&uuml;r Dein Wohlbefinden von Kopf bis Fu&szlig;</h2>
-            <p class="section-subtitle section-subtitle-center" data-aos="fade-up" data-aos-delay="100">Jede Behandlung im Reembeleza wird individuell auf Dich abgestimmt. Hier verbinden sich Technik, Sorgfalt und Erfahrung zu einem Erlebnis, das &uuml;ber das Sichtbare hinausgeht.</p>
+            <p class="section-subtitle section-subtitle-center" data-aos="fade-up" data-aos-delay="100">Jede Behandlung bei Reembeleza wird individuell auf Sie abgestimmt. Hier verbinden sich Technik, Sorgfalt und Erfahrung zu einem Erlebnis, das &uuml;ber das Sichtbare hinausgeht.</p>
 
             <div class="services-grid">
                 <!-- Card 1 -->
@@ -1891,13 +1914,13 @@
                             <li>Langanhaltend glatte Haut</li>
                             <li>Schonende Nachpflege</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img class="service-card-image" src="https://images.pexels.com/photos/5619448/pexels-photo-5619448.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Sugaring">
+                    <img class="service-card-image" src="imagens/WhatsApp Image 2026-03-10 at 08.08.45.jpeg" alt="Sugaring">
                     <div class="service-card-content">
                         <h3 class="service-card-title">Sugaring</h3>
                         <p class="service-card-desc">Sanfte Haarentfernung mit nat&uuml;rlicher Zuckerpaste. Besonders schonend f&uuml;r empfindliche Haut.</p>
@@ -1906,7 +1929,7 @@
                             <li>Weniger Schmerz, weniger Irritation</li>
                             <li>Ideal f&uuml;r sensible Haut</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1921,7 +1944,7 @@
                             <li>Sp&uuml;rbare Leichtigkeit</li>
                             <li>Therapeutischer Effekt</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
             </div>
@@ -1929,7 +1952,7 @@
             <div class="services-grid-4">
                 <!-- Card 4 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img class="service-card-image" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop&q=80" alt="Wimperlifting">
+                    <img class="service-card-image" src="imagens/WhatsApp Image 2026-03-10 at 10.09.58.jpeg" alt="Wimperlifting">
                     <div class="service-card-content">
                         <h3 class="service-card-title">Wimperlifting</h3>
                         <p class="service-card-desc">Dein nat&uuml;rlicher Augenaufschlag, perfekt in Szene gesetzt. Ohne k&uuml;nstliche Wimpern.</p>
@@ -1938,7 +1961,7 @@
                             <li>Haltbarkeit 6-8 Wochen</li>
                             <li>Individuelle Anpassung</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1953,7 +1976,7 @@
                             <li>Shiatsu, Sportmassage</li>
                             <li>Paarmassage</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
 
@@ -1968,7 +1991,7 @@
                             <li>Microneedling mit Hyalurons&auml;ure</li>
                             <li>Augenbrauenformung</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
                 <!-- Card 7: Manik&uuml;re und Pedik&uuml;re -->
@@ -1982,7 +2005,7 @@
                             <li>Verw&ouml;hnende Handmassage</li>
                             <li>Entspannende Fu&szlig;massage</li>
                         </ul>
-                        <a href="#termin" class="btn btn-primary btn-sm">Termin buchen</a>
+                        <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Termin buchen</a>
                     </div>
                 </div>
             </div>
@@ -2009,7 +2032,7 @@
                         <li>Ausf&uuml;hrliche Beratung f&uuml;r Deine individuellen Bed&uuml;rfnisse</li>
                     </ul>
                     <p class="service-detail-result">Das Ergebnis: seidig glatte Haut, ein frisches K&ouml;rpergef&uuml;hl und ein Selbstbewusstsein, das wochenlang anh&auml;lt.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Brazilian Waxing buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Brazilian Waxing buchen</a>
                 </div>
             </div>
         </section>
@@ -2017,7 +2040,7 @@
         <!-- Detail 2: Sugaring -->
         <section class="service-detail">
             <div class="service-detail-grid">
-                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.pexels.com/photos/5619448/pexels-photo-5619448.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Sugaring" data-aos="fade-left"></div>
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="imagens/WhatsApp Image 2026-03-10 at 08.08.45.jpeg" alt="Sugaring" data-aos="fade-left"></div>
                 <div class="service-detail-content" data-aos="fade-right">
                     <h2 class="service-detail-title">Sugaring</h2>
                     <p class="service-detail-subtitle">Sanfte Haarentfernung mit nat&uuml;rlicher Zuckerpaste</p>
@@ -2032,7 +2055,7 @@
                         <li>Geeignet auch f&uuml;r Allergikerinnen</li>
                     </ul>
                     <p class="service-detail-result">Perfekt f&uuml;r alle, die nat&uuml;rliche Pflege und sanfte Behandlung bevorzugen.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Sugaring buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Sugaring buchen</a>
                 </div>
             </div>
         </section>
@@ -2055,7 +2078,7 @@
                         <li>Tiefe Entspannung mit therapeutischem Effekt</li>
                     </ul>
                     <p class="service-detail-result">Viele Kundinnen berichten schon nach der ersten Sitzung von einem sichtbar entschw&auml;mmten K&ouml;rper und einem v&ouml;llig neuen K&ouml;rpergef&uuml;hl.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Lymphdrainage buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Lymphdrainage buchen</a>
                 </div>
             </div>
         </section>
@@ -2063,7 +2086,7 @@
         <!-- Detail 4: Wimperlifting -->
         <section class="service-detail">
             <div class="service-detail-grid">
-                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop&q=80" alt="Wimperlifting" data-aos="fade-left"></div>
+                <div class="service-detail-img-wrap"><div class="service-detail-img-glow"></div><div class="service-detail-img-corner"></div><img class="service-detail-image" src="imagens/WhatsApp Image 2026-03-10 at 10.09.58.jpeg" alt="Wimperlifting" data-aos="fade-left"></div>
                 <div class="service-detail-content" data-aos="fade-right">
                     <h2 class="service-detail-title">Wimperlifting</h2>
                     <p class="service-detail-subtitle">Dein nat&uuml;rlicher Augenaufschlag, perfekt in Szene gesetzt</p>
@@ -2077,7 +2100,7 @@
                         <li>Individuelle Anpassung an Deine Augenform und Wimpernl&auml;nge</li>
                     </ul>
                     <p class="service-detail-result">Ideal f&uuml;r Frauen, die einen ausdrucksvollen Blick m&ouml;chten &mdash; nat&uuml;rlich, elegant und ohne t&auml;glichen Aufwand.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Wimperlifting buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Wimperlifting buchen</a>
                 </div>
             </div>
         </section>
@@ -2101,8 +2124,8 @@
                         <li>Fu&szlig;reflexzonenmassage &mdash; &uuml;ber die F&uuml;&szlig;e den ganzen K&ouml;rper ansprechen</li>
                         <li>Paarmassage &mdash; gemeinsame Entspannung zu zweit</li>
                     </ul>
-                    <p class="service-detail-result">Ob Alltagsstress, k&ouml;rperliche Verspannungen oder einfach eine Auszeit &mdash; hier findest Du genau das, was Dein K&ouml;rper braucht.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Massage buchen</a>
+                    <p class="service-detail-result">Ob Alltagsstress, k&ouml;rperliche Verspannungen oder einfach eine Auszeit &mdash; hier finden Sie genau das, was Ihr K&ouml;rper braucht.</p>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Massage buchen</a>
                 </div>
             </div>
         </section>
@@ -2129,7 +2152,7 @@
                         <li>Entspannende Fu&szlig;massage</li>
                     </ul>
                     <p class="service-detail-result">Perfekt gepflegt &mdash; von den Fingerspitzen bis zu den Zehen.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Manik&uuml;re / Pedik&uuml;re buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Manik&uuml;re / Pedik&uuml;re buchen</a>
                 </div>
             </div>
         </section>
@@ -2150,7 +2173,7 @@
                         <li>Individuelle Pflegeempfehlungen f&uuml;r Zuhause</li>
                     </ul>
                     <p class="service-detail-result">Die Haut ist das gr&ouml;&szlig;te Organ Deines K&ouml;rpers. Sie verdient professionelle Aufmerksamkeit.</p>
-                    <a href="#termin" class="btn btn-primary btn-sm">Hautpflege buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Hautpflege buchen</a>
                 </div>
             </div>
         </section>
@@ -2160,9 +2183,9 @@
     <section class="cta-bar">
         <div class="container">
             <div class="cta-bar-inner" data-aos="fade-up">
-                <h3>Noch unsicher, welche Behandlung am besten zu Dir passt?</h3>
-                <p>Kein Problem &mdash; wir beraten Dich gerne pers&ouml;nlich und finden gemeinsam die ideale Pflege f&uuml;r Dich.</p>
-                <a href="#termin" class="btn btn-pink">Lass Dich beraten &mdash; Jetzt Kontakt aufnehmen</a>
+                <h3>Noch unsicher, welche Behandlung am besten zu Ihnen passt?</h3>
+                <p>Kein Problem &mdash; wir beraten Sie gerne pers&ouml;nlich und finden gemeinsam die ideale Pflege f&uuml;r Sie.</p>
+                <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-pink">Lassen Sie sich beraten &mdash; Jetzt Kontakt aufnehmen</a>
                 <a href="tel:+4915167065729" class="cta-bar-phone">Oder ruf uns direkt an: +49 151 67065729</a>
             </div>
         </div>
@@ -2215,41 +2238,41 @@
                     <div class="step-number">01</div>
                     <div class="step-content">
                         <h3>Terminbuchung</h3>
-                        <p>W&auml;hle Deine gew&uuml;nschte Behandlung und buche Deinen Termin online oder per Telefon. Wir finden gemeinsam den besten Zeitpunkt f&uuml;r Dich.</p>
+                        <p>W&auml;hlen Sie Ihre gew&uuml;nschte Behandlung und buchen Sie Ihren Termin online oder per Telefon. Wir finden gemeinsam den besten Zeitpunkt f&uuml;r Sie.</p>
                     </div>
                 </div>
                 <div class="step-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="step-number">02</div>
                     <div class="step-content">
                         <h3>Pers&ouml;nliches Gespr&auml;ch</h3>
-                        <p>Vor jeder Behandlung nehmen wir uns Zeit f&uuml;r Dich. Wir besprechen Deine W&uuml;nsche, analysieren Deine Haut oder Deinen K&ouml;rper und stimmen die Behandlung individuell ab.</p>
+                        <p>Vor jeder Behandlung nehmen wir uns Zeit f&uuml;r Sie. Wir besprechen Ihre W&uuml;nsche, analysieren Ihre Haut oder Ihren K&ouml;rper und stimmen die Behandlung individuell ab.</p>
                     </div>
                 </div>
                 <div class="step-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Deine Behandlung</h3>
-                        <p>In einer ruhigen, einladenden Atmosph&auml;re f&uuml;hren wir die Behandlung mit h&ouml;chster Sorgfalt durch. Sanfte Musik, angenehmes Licht und volle Aufmerksamkeit &mdash; damit Du Dich vollkommen entspannen kannst.</p>
+                        <h3>Ihre Behandlung</h3>
+                        <p>In einer ruhigen, einladenden Atmosph&auml;re f&uuml;hren wir die Behandlung mit h&ouml;chster Sorgfalt durch. Sanfte Musik, angenehmes Licht und volle Aufmerksamkeit &mdash; damit Sie sich vollkommen entspannen k&ouml;nnen.</p>
                     </div>
                 </div>
                 <div class="step-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="step-number">04</div>
                     <div class="step-content">
                         <h3>Nachpflege und Empfehlungen</h3>
-                        <p>Nach der Behandlung erh&auml;ltst Du professionelle Tipps und Pflegeempfehlungen, damit Deine Ergebnisse l&auml;nger anhalten und Deine Haut optimal versorgt bleibt.</p>
+                        <p>Nach der Behandlung erhalten Sie professionelle Tipps und Pflegeempfehlungen, damit Ihre Ergebnisse l&auml;nger anhalten und Ihre Haut optimal versorgt bleibt.</p>
                     </div>
                 </div>
                 <div class="step-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="step-number">05</div>
                     <div class="step-content">
-                        <h3>Dein neues Wohlgef&uuml;hl</h3>
-                        <p>Du verl&auml;sst unser Studio mit einem L&auml;cheln, frischer Haut und einem Gef&uuml;hl von Leichtigkeit und Selbstvertrauen.</p>
+                        <h3>Ihr neues Wohlgef&uuml;hl</h3>
+                        <p>Sie verlassen unser Studio mit einem L&auml;cheln, frischer Haut und einem Gef&uuml;hl von Leichtigkeit und Selbstvertrauen.</p>
                     </div>
                 </div>
             </div>
 
             <div class="steps-cta" data-aos="fade-up">
-                <a href="#termin" class="btn btn-primary">Jetzt Deinen Termin buchen</a>
+                <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Deinen Termin buchen</a>
             </div>
         </div>
     </section>
@@ -2384,7 +2407,7 @@
                     <p>Mein Ansatz ist klar: nicht &uuml;bertreiben, sondern die nat&uuml;rliche Sch&ouml;nheit gezielt hervorheben. Jede Behandlung f&uuml;hre ich mit voller Aufmerksamkeit, h&ouml;chster Hygiene und individueller Abstimmung durch.</p>
                     <p class="about-closing">Ich freue mich auf Dich.</p>
                     <br>
-                    <a href="#termin" class="btn btn-primary">Jetzt Termin bei Renata buchen</a>
+                    <a href="https://calendly.com/reembeleza" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Termin bei Renata buchen</a>
                 </div>
             </div>
         </div>
@@ -2555,8 +2578,8 @@
             <div class="footer-bottom">
                 <div>&copy; 2026 Reembeleza Kosmetikstudio. Alle Rechte vorbehalten.</div>
                 <div class="footer-bottom-links">
-                    <a href="#">Impressum</a>
-                    <a href="#">Datenschutz</a>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
                 </div>
             </div>
         </div>
